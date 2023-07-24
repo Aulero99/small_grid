@@ -1,6 +1,6 @@
 {
   "name": "small_grid",
-  "private": false,
+  "private": true,
   "version": "1.0.3",
   "type": "module",
   "scripts": {
