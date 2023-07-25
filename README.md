@@ -12,26 +12,27 @@ NOTE: After forking this file, you need to run npm i to download and install dep
 
 Current Version:
 
-<https://cdn.jsdelivr.net/gh/Aulero99/small_grid@master/min/min.css>
+<https://cdn.jsdelivr.net/gh/Aulero99/small_grid@main/min/min.css>
 
 Or just the grid - 
 
-<https://cdn.jsdelivr.net/gh/Aulero99/small_grid@master/min/min_grid.css>
+<https://cdn.jsdelivr.net/gh/Aulero99/small_grid@main/min/min_grid.css>
 
 Earlier Versions:
 
-<https://cdn.jsdelivr.net/gh/Aulero99/small_grid@master/min/min_0_0_0.css>
+<https://cdn.jsdelivr.net/gh/Aulero99/small_grid@main/min/min_0_0_0.css>
 
 Or just the grid - 
 
-<https://cdn.jsdelivr.net/gh/Aulero99/small_grid@master/src/min/min_0_0_0_grid.css>
+<https://cdn.jsdelivr.net/gh/Aulero99/small_grid@main/src/min/min_0_0_0_grid.css>
 
 
 Just replace the 0_0_0 with the desired min file
 
 Versions:
 
-1.0.5 
+ - 1.0.5
+ - 1.0.6 
 
 
 ### 1.0.5 Release Notes
