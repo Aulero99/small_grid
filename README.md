@@ -14,4 +14,4 @@ NOTE: After forking this file, you need to run npm i to download and install dep
  - @media grid rules added
  - Added template for default dark mode  
 
-## Using: Vite, Vue, & Sass
+#### Using: Vite, Vue, & Sass
