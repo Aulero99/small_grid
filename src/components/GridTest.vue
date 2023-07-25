@@ -33,28 +33,27 @@
         <div class="col-fill p-2 orange">
             col-fill
         </div>
-        
-        <div class="col-12 m-4">
-          <div class="red fill p-2">
-            col-12 with m-2
-          </div>
+
+        <div class="col-12 m-1 p-2 purple">
+            col-12 with m-1
         </div>
 
-        <div class="col-fill p-2">
-          <div class="green p-2">
-            fill-1
-          </div>
+        <div class="col-12 m-2 p-2 purple">
+            col-12 with m-2
         </div>
-        <div class="col-fill p-2">
-          <div class="green p-2">
-            fill-2
-          </div>
+
+        <div class="col-12 m-3 p-2 purple">
+            col-12 with m-3
         </div>
-        <div class="col-fill p-2">
-          <div class="green p-2">
-            fill-3
-          </div>
+
+        <div class="col-12 m-4 p-2 purple">
+            col-12 with m-4
         </div>
+
+        <div class="col-12 m-5 p-2 purple">
+            col-12 with m-5
+        </div>
+
         <div class="col-12 flex-row justify-end p-2">
           <div class="orange p-2">
             Justify End Flex Row

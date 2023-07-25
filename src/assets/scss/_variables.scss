@@ -1,11 +1,12 @@
+// NOTE this variable sets the spacing in all of the grid try increasing it and see what happens
 $gutter: 1.5rem;
-
+// NOTE these are the breakpoints for screen sizes, these are identical to what bootstrap uses, but feel free to adjust as needed
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
-
+// NOTE these are some sample variables you can use in other areas of the project, minimal are used for this template
 $danger: #ea0606;
 $success: #00f867;
 $body-bg: rgb(252, 252, 252);
