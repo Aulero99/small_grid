@@ -15,9 +15,16 @@ Current Version:
 
 Earlier Versions:
 <https://cdn.jsdelivr.net/gh/Aulero99/small_grid@master/src/min/min_0_0_0.css>
+
+Or just the grid - 
+
+<https://cdn.jsdelivr.net/gh/Aulero99/small_grid@master/src/min/min_0_0_0_grid.css>
+
+
 Just replace the 0_0_0 with the desired min file
 
 Versions:
+
 1.0.5 
 
 

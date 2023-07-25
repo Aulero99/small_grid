@@ -1,7 +1,12 @@
+@import "./_variables.scss";
+
+$breakpoints:("sm":$sm, "md":$md, "lg":$lg, "xl":$xl, "xxl":$xxl );
+$paddings:("0":0, "1":$p1, "2":$p2, "3":$p3, "4":$p4, "5":$gutter);
+
 *{ box-sizing: border-box; }
 
 .container{
-    display: grid;
+    display: flex;
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
@@ -10,11 +15,9 @@
     padding-left: calc($gutter * .5);
     padding-right: calc($gutter * .5); 
 
-    @media screen and (max-width: $sm){max-width: calc($sm - $gutter) !important;}
-    @media screen and (max-width: $md){max-width: calc($md - $gutter) !important;}
-    @media screen and (max-width: $lg){max-width: calc($lg - $gutter) !important;}
-    @media screen and (max-width: $xl){max-width: calc($xl - $gutter) !important;}
-    @media screen and (max-width: $xxl){max-width: calc($xxl - $gutter) !important;}
+    @each $key, $value in $breakpoints{
+        @media screen and (max-width: $value){max-width: calc($value - $gutter) !important;}
+    }
 
     .row{
         display: flex;
@@ -40,79 +43,21 @@
         .col-2{ width: calc( (1/6) * 100% ); }
         .col-1{ width: calc( (1/12) * 100% ); }
 
-        @media screen and ($minmax: $sm){
-            .col-sm-12{ width: 100% !important; }
-            .col-sm-11{ width: calc( (11/12) * 100% ) !important; }
-            .col-sm-10{ width: calc( (5/6) * 100% ) !important; }
-            .col-sm-9{ width: 75% !important; }
-            .col-sm-8{ width: calc( (2/3) * 100% ) !important; }
-            .col-sm-7{ width: calc( (7/12) * 100% ) !important; }
-            .col-sm-6{ width: 50% !important; }
-            .col-sm-5{ width: calc( (5/12) * 100% ) !important; }
-            .col-sm-4{ width: calc( (1/3) * 100% ) !important; }
-            .col-sm-3{ width: 25%; }
-            .col-sm-2{ width: calc( (1/6) * 100% ) !important; }
-            .col-sm-1{ width: calc( (1/12) * 100% ) !important; }
-        }
-
-        @media screen and ($minmax: $md){
-            .col-md-12{ width: 100% !important; }
-            .col-md-11{ width: calc( (11/12) * 100% ) !important; }
-            .col-md-10{ width: calc( (5/6) * 100% ) !important; }
-            .col-md-9{ width: 75% !important; }
-            .col-md-8{ width: calc( (2/3) * 100% ) !important; }
-            .col-md-7{ width: calc( (7/12) * 100% ) !important; }
-            .col-md-6{ width: 50% !important; }
-            .col-md-5{ width: calc( (5/12) * 100% ) !important; }
-            .col-md-4{ width: calc( (1/3) * 100% ) !important; }
-            .col-md-3{ width: 25%; }
-            .col-md-2{ width: calc( (1/6) * 100% ) !important; }
-            .col-md-1{ width: calc( (1/12) * 100% ) !important; }
-        }
-
-        @media screen and ($minmax: $lg){
-            .col-lg-12{ width: 100% !important; }
-            .col-lg-11{ width: calc( (11/12) * 100% ) !important; }
-            .col-lg-10{ width: calc( (5/6) * 100% ) !important; }
-            .col-lg-9{ width: 75% !important; }
-            .col-lg-8{ width: calc( (2/3) * 100% ) !important; }
-            .col-lg-7{ width: calc( (7/12) * 100% ) !important; }
-            .col-lg-6{ width: 50% !important; }
-            .col-lg-5{ width: calc( (5/12) * 100% ) !important; }
-            .col-lg-4{ width: calc( (1/3) * 100% ) !important; }
-            .col-lg-3{ width: 25%; }
-            .col-lg-2{ width: calc( (1/6) * 100% ) !important; }
-            .col-lg-1{ width: calc( (1/12) * 100% ) !important; }
-        }
-
-        @media screen and ($minmax: $xl){
-            .col-xl-12{ width: 100% !important; }
-            .col-xl-11{ width: calc( (11/12) * 100% ) !important; }
-            .col-xl-10{ width: calc( (5/6) * 100% ) !important; }
-            .col-xl-9{ width: 75% !important; }
-            .col-xl-8{ width: calc( (2/3) * 100% ) !important; }
-            .col-xl-7{ width: calc( (7/12) * 100% ) !important; }
-            .col-xl-6{ width: 50% !important; }
-            .col-xl-5{ width: calc( (5/12) * 100% ) !important; }
-            .col-xl-4{ width: calc( (1/3) * 100% ) !important; }
-            .col-xl-3{ width: 25%; }
-            .col-xl-2{ width: calc( (1/6) * 100% ) !important; }
-            .col-xl-1{ width: calc( (1/12) * 100% ) !important; }
-        }
-
-        @media screen and ($minmax: $xxl){
-            .col-xxl-12{ width: 100% !important; }
-            .col-xxl-11{ width: calc( (11/12) * 100% ) !important; }
-            .col-xxl-10{ width: calc( (5/6) * 100% ) !important; }
-            .col-xxl-9{ width: 75% !important; }
-            .col-xxl-8{ width: calc( (2/3) * 100% ) !important; }
-            .col-xxl-7{ width: calc( (7/12) * 100% ) !important; }
-            .col-xxl-6{ width: 50% !important; }
-            .col-xxl-5{ width: calc( (5/12) * 100% ) !important; }
-            .col-xxl-4{ width: calc( (1/3) * 100% ) !important; }
-            .col-xxl-3{ width: 25%; }
-            .col-xxl-2{ width: calc( (1/6) * 100% ) !important; }
-            .col-xxl-1{ width: calc( (1/12) * 100% ) !important; }
+        @each $key, $value in $breakpoints{
+            @media screen and ($minmax: $value){
+                .col-#{$key}-12{ width: 100% !important; }
+                .col-#{$key}-11{ width: calc( (11/12) * 100% ) !important; }
+                .col-#{$key}-10{ width: calc( (5/6) * 100% ) !important; }
+                .col-#{$key}-9{ width: 75% !important; }
+                .col-#{$key}-8{ width: calc( (2/3) * 100% ) !important; }
+                .col-#{$key}-7{ width: calc( (7/12) * 100% ) !important; }
+                .col-#{$key}-6{ width: 50% !important; }
+                .col-#{$key}-5{ width: calc( (5/12) * 100% ) !important; }
+                .col-#{$key}-4{ width: calc( (1/3) * 100% ) !important; }
+                .col-#{$key}-3{ width: 25%; }
+                .col-#{$key}-2{ width: calc( (1/6) * 100% ) !important; }
+                .col-#{$key}-1{ width: calc( (1/12) * 100% ) !important; }
+            }
         }
 
         &.m-0{
@@ -158,105 +103,27 @@
 .fill-x{ width: 100%; }
 .fill-y{ height: 100%; }
 
-@media screen and ($minmax: $sm){
-    .flex-sm-row{
-        display: flex !important;
-        flex-direction: row !important;
-        .wrap{ flex-wrap: wrap !important; }
+@each $key, $value in $breakpoints{
+    @media screen and ($minmax: $value){
+        .flex-#{$key}-row{
+            display: flex !important;
+            flex-direction: row !important;
+            .wrap{ flex-wrap: wrap !important; }
+        }
+        .flex-#{$key}-col{
+            display: flex !important;
+            flex-direction: column !important;
+            .wrap{ flex-wrap: wrap !important; }
+        }
+        .grow-#{$key}-1{ flex-grow: 1 !important; }
+        .fill-#{$key} {
+            height: 100% !important;
+            width: 100% !important;
+            flex-grow: 1 !important;
+        }
+        .fill-#{$key}-x{ width: 100% !important; }
+        .fill-#{$key}-y{ height: 100% !important; }
     }
-    .flex-sm-col{
-        display: flex !important;
-        flex-direction: column !important;
-        .wrap{ flex-wrap: wrap !important; }
-    }
-    .grow-sm-1{ flex-grow: 1 !important; }
-    .fill-sm{
-        height: 100% !important;
-        width: 100% !important;
-        flex-grow: 1 !important;
-    }
-    .fill-sm-x{ width: 100% !important; }
-    .fill-sm-y{ height: 100% !important; }
-}
-@media screen and ($minmax: $md){
-    .flex-md-row{
-        display: flex !important;
-        flex-direction: row !important;
-        .wrap{ flex-wrap: wrap !important; }
-    }
-    .flex-md-col{
-        display: flex !important;
-        flex-direction: column !important;
-        .wrap{ flex-wrap: wrap !important; }
-    }
-    .grow-md-1{ flex-grow: 1 !important; }
-    .fill-md{
-        height: 100% !important;
-        width: 100% !important;
-        flex-grow: 1 !important;
-    }
-    .fill-md-x{ width: 100% !important; }
-    .fill-md-y{ height: 100% !important; }
-}
-@media screen and ($minmax: $lg){
-    .flex-lg-row{
-        display: flex !important;
-        flex-direction: row !important;
-        .wrap{ flex-wrap: wrap !important; }
-    }
-    .flex-lg-col{
-        display: flex !important;
-        flex-direction: column !important;
-        .wrap{ flex-wrap: wrap !important; }
-    }
-    .grow-lg-1{ flex-grow: 1 !important; }
-    .fill-lg{
-        height: 100% !important;
-        width: 100% !important;
-        flex-grow: 1 !important;
-    }
-    .fill-lg-x{ width: 100% !important; }
-    .fill-lg-y{ height: 100% !important; }
-}
-@media screen and ($minmax: $xl){
-    .flex-xl-row{
-        display: flex !important;
-        flex-direction: row !important;
-        .wrap{ flex-wrap: wrap !important; }
-    }
-    .flex-xl-col{
-        display: flex !important;
-        flex-direction: column !important;
-        .wrap{ flex-wrap: wrap !important; }
-    }
-    .grow-xl-1{ flex-grow: 1 !important; }
-    .fill-xl{
-        height: 100% !important;
-        width: 100% !important;
-        flex-grow: 1 !important;
-    }
-    .fill-xl-x{ width: 100% !important; }
-    .fill-xl-y{ height: 100% !important; }
-}
-@media screen and ($minmax: $xxl){
-    .flex-xxl-row{
-        display: flex !important;
-        flex-direction: row !important;
-        .wrap{ flex-wrap: wrap !important; }
-    }
-    .flex-xxl-col{
-        display: flex !important;
-        flex-direction: column !important;
-        .wrap{ flex-wrap: wrap !important; }
-    }
-    .grow-xxl-1{ flex-grow: 1 !important; }
-    .fill-xxl{
-        height: 100% !important;
-        width: 100% !important;
-        flex-grow: 1 !important;
-    }
-    .fill-xxl-x{ width: 100% !important; }
-    .fill-xxl-y{ height: 100% !important; }
 }
 
 .align-start{
@@ -308,1286 +175,208 @@
     justify-items: space-evenly;
 }
 
-@media screen and ($minmax: $sm){
-    .align-sm-start{
-        align-items: flex-start;
-        align-content: flex-start;
-    }
-    .align-sm-center{
-        align-items: center;
-        align-content: center;
-    }
-    .align-sm-end{
-        align-items: flex-end;
-        align-content: flex-end;
-    }
-    .align-sm-between{
-        align-content: space-between;
-        align-items: space-between;
-    }
-    .align-sm-around{
-        align-content: space-around;
-        align-items: space-around;
-    }
-    .align-sm-even{
-        align-content: space-evenly;
-        align-items: space-evenly;
-    }
-    .justify-sm-start{
-        justify-content: flex-start;
-        justify-items: flex-start;
-    }
-    .justify-sm-center{
-        justify-content: center;
-        justify-items: center;
-    }
-    .justify-sm-end{
-        justify-content: flex-end;
-        justify-items: flex-end;
-    }
-    .justify-sm-between{
-        justify-content: space-between;
-        justify-items: space-between;
-    }
-    .justify-sm-around{
-        justify-content: space-around;
-        justify-items: space-around;
-    }
-    .justify-sm-even{
-        justify-content: space-evenly;
-        justify-items: space-evenly;
-    }
-}
-@media screen and ($minmax: $md){
-    .align-md-start{
-        align-items: flex-start;
-        align-content: flex-start;
-    }
-    .align-md-center{
-        align-items: center;
-        align-content: center;
-    }
-    .align-md-end{
-        align-items: flex-end;
-        align-content: flex-end;
-    }
-    .align-md-between{
-        align-content: space-between;
-        align-items: space-between;
-    }
-    .align-md-around{
-        align-content: space-around;
-        align-items: space-around;
-    }
-    .align-md-even{
-        align-content: space-evenly;
-        align-items: space-evenly;
-    }
-    .justify-md-start{
-        justify-content: flex-start;
-        justify-items: flex-start;
-    }
-    .justify-md-center{
-        justify-content: center;
-        justify-items: center;
-    }
-    .justify-md-end{
-        justify-content: flex-end;
-        justify-items: flex-end;
-    }
-    .justify-md-between{
-        justify-content: space-between;
-        justify-items: space-between;
-    }
-    .justify-md-around{
-        justify-content: space-around;
-        justify-items: space-around;
-    }
-    .justify-md-even{
-        justify-content: space-evenly;
-        justify-items: space-evenly;
-    }
-}
-@media screen and ($minmax: $lg){
-    .align-lg-start{
-        align-items: flex-start;
-        align-content: flex-start;
-    }
-    .align-lg-center{
-        align-items: center;
-        align-content: center;
-    }
-    .align-lg-end{
-        align-items: flex-end;
-        align-content: flex-end;
-    }
-    .align-lg-between{
-        align-content: space-between;
-        align-items: space-between;
-    }
-    .align-lg-around{
-        align-content: space-around;
-        align-items: space-around;
-    }
-    .align-lg-even{
-        align-content: space-evenly;
-        align-items: space-evenly;
-    }
-    .justify-lg-start{
-        justify-content: flex-start;
-        justify-items: flex-start;
-    }
-    .justify-lg-center{
-        justify-content: center;
-        justify-items: center;
-    }
-    .justify-lg-end{
-        justify-content: flex-end;
-        justify-items: flex-end;
-    }
-    .justify-lg-between{
-        justify-content: space-between;
-        justify-items: space-between;
-    }
-    .justify-lg-around{
-        justify-content: space-around;
-        justify-items: space-around;
-    }
-    .justify-lg-even{
-        justify-content: space-evenly;
-        justify-items: space-evenly;
-    }
-}
-@media screen and ($minmax: $xl){
-    .align-xl-start{
-        align-items: flex-start;
-        align-content: flex-start;
-    }
-    .align-xl-center{
-        align-items: center;
-        align-content: center;
-    }
-    .align-xl-end{
-        align-items: flex-end;
-        align-content: flex-end;
-    }
-    .align-xl-between{
-        align-content: space-between;
-        align-items: space-between;
-    }
-    .align-xl-around{
-        align-content: space-around;
-        align-items: space-around;
-    }
-    .align-xl-even{
-        align-content: space-evenly;
-        align-items: space-evenly;
-    }
-    .justify-xl-start{
-        justify-content: flex-start;
-        justify-items: flex-start;
-    }
-    .justify-xl-center{
-        justify-content: center;
-        justify-items: center;
-    }
-    .justify-xl-end{
-        justify-content: flex-end;
-        justify-items: flex-end;
-    }
-    .justify-xl-between{
-        justify-content: space-between;
-        justify-items: space-between;
-    }
-    .justify-xl-around{
-        justify-content: space-around;
-        justify-items: space-around;
-    }
-    .justify-xl-even{
-        justify-content: space-evenly;
-        justify-items: space-evenly;
-    }
-}
-@media screen and ($minmax: $xxl){
-    .align-xxl-start{
-        align-items: flex-start;
-        align-content: flex-start;
-    }
-    .align-xxl-center{
-        align-items: center;
-        align-content: center;
-    }
-    .align-xxl-end{
-        align-items: flex-end;
-        align-content: flex-end;
-    }
-    .align-xxl-between{
-        align-content: space-between;
-        align-items: space-between;
-    }
-    .align-xxl-around{
-        align-content: space-around;
-        align-items: space-around;
-    }
-    .align-xxl-even{
-        align-content: space-evenly;
-        align-items: space-evenly;
-    }
-    .justify-xxl-start{
-        justify-content: flex-start;
-        justify-items: flex-start;
-    }
-    .justify-xxl-center{
-        justify-content: center;
-        justify-items: center;
-    }
-    .justify-xxl-end{
-        justify-content: flex-end;
-        justify-items: flex-end;
-    }
-    .justify-xxl-between{
-        justify-content: space-between;
-        justify-items: space-between;
-    }
-    .justify-xxl-around{
-        justify-content: space-around;
-        justify-items: space-around;
-    }
-    .justify-xxl-even{
-        justify-content: space-evenly;
-        justify-items: space-evenly;
+@each $key, $value in $breakpoints{
+    @media screen and ($minmax: $value){
+        .align-#{$key}-start{
+            align-items: flex-start !important;
+            align-content: flex-start !important;
+        }
+        .align-#{$key}-center{
+            align-items: center !important;
+            align-content: center !important;
+        }
+        .align-#{$key}-end{
+            align-items: flex-end !important;
+            align-content: flex-end !important;
+        }
+        .align-#{$key}-between{
+            align-content: space-between !important;
+            align-items: space-between !important;
+        }
+        .align-#{$key}-around{
+            align-content: space-around !important;
+            align-items: space-around !important;
+        }
+        .align-#{$key}-even{
+            align-content: space-evenly !important;
+            align-items: space-evenly !important;
+        }
+        .justify-#{$key}-start{
+            justify-content: flex-start !important;
+            justify-items: flex-start !important;
+        }
+        .justify-#{$key}-center{
+            justify-content: center !important;
+            justify-items: center !important;
+        }
+        .justify-#{$key}-end{
+            justify-content: flex-end !important;
+            justify-items: flex-end !important;
+        }
+        .justify-#{$key}-between{
+            justify-content: space-between !important;
+            justify-items: space-between !important;
+        }
+        .justify-#{$key}-around{
+            justify-content: space-around !important;
+            justify-items: space-around !important;
+        }
+        .justify-#{$key}-even{
+            justify-content: space-evenly !important;
+            justify-items: space-evenly !important;
+        }
     }
 }
 
-.p-0{ padding: 0; }
-.p-1{ padding: $p1; }
-.p-2{ padding: $p2; }
-.p-3{ padding: $p3; }
-.p-4{ padding: $p4; }
-.p-5{ padding: $gutter; }
+// STUB Begin Padding
 
-.pt-0{ padding-top: 0; }
-.pt-1{ padding-top: $p1; }
-.pt-2{ padding-top: $p2; }
-.pt-3{ padding-top: $p3; }
-.pt-4{ padding-top: $p4; }
-.pt-5{ padding-top: $gutter; }
-
-.pb-0{ padding-bottom: 0; }
-.pb-1{ padding-bottom: $p1; }
-.pb-2{ padding-bottom: $p2; }
-.pb-3{ padding-bottom: $p3; }
-.pb-4{ padding-bottom: $p4; }
-.pb-5{ padding-bottom: $gutter; }
-
-.ps-0{ padding-left: 0; }
-.ps-1{ padding-left: $p1; }
-.ps-2{ padding-left: $p2; }
-.ps-3{ padding-left: $p3; }
-.ps-4{ padding-left: $p4; }
-.ps-5{ padding-left: $gutter; }
-
-.pe-0{ padding-right: 0; }
-.pe-1{ padding-right: $p1; }
-.pe-2{ padding-right: $p2; }
-.pe-3{ padding-right: $p3; }
-.pe-4{ padding-right: $p4; }
-.pe-5{ padding-right: $gutter; }
-
-.px-0{
-    padding-left: 0; 
-    padding-right: 0; 
+// standard padding
+@each $key, $value in $paddings { 
+    .p-#{$key} { padding: $value; }
 }
-.px-1{
-    padding-left: $p1; 
-    padding-right: $p1; 
+// padding top
+@each $key, $value in $paddings { 
+    .pt-#{$key} { padding-top: $value; }
 }
-.px-2{ 
-    padding-left: $p2; 
-    padding-right: $p2; 
+// padding bottom
+@each $key, $value in $paddings { 
+    .pb-#{$key} { padding-bottom: $value; }
 }
-.px-3{ 
-    padding-left: $p3; 
-    padding-right: $p3; 
+// padding start
+@each $key, $value in $paddings { 
+    .ps-#{$key} { padding-left: $value; }
 }
-.px-4{
-    padding-left: $p4; 
-    padding-right: $p4; 
+// padding end
+@each $key, $value in $paddings { 
+    .pe-#{$key} { padding-right: $value; }
 }
-.px-5{
-    padding-left: $gutter; 
-    padding-right: $gutter; 
-}
-
-.py-0{
-    padding-top: 0; 
-    padding-bottom: 0; 
-}
-.py-1{
-    padding-top: $p1; 
-    padding-bottom: $p1; 
-}
-.py-2{ 
-    padding-top: $p2; 
-    padding-bottom: $p2; 
-}
-.py-3{ 
-    padding-top: $p3; 
-    padding-bottom: $p3; 
-}
-.py-4{
-    padding-top: $p4; 
-    padding-bottom: $p4; 
-}
-.py-5{
-    padding-top: $gutter; 
-    padding-bottom: $gutter; 
-}
-
-@media screen and ($minmax: $sm){
-    .p-sm-0{ padding: 0 !important; }
-    .p-sm-1{ padding: $p1 !important; }
-    .p-sm-2{ padding: $p2 !important; }
-    .p-sm-3{ padding: $p3 !important; }
-    .p-sm-4{ padding: $p4 !important; }
-    .p-sm-5{ padding: $gutter !important; }
-
-    .pt-sm-0{ padding-top: 0 !important; }
-    .pt-sm-1{ padding-top: $p1 !important; }
-    .pt-sm-2{ padding-top: $p2 !important; }
-    .pt-sm-3{ padding-top: $p3 !important; }
-    .pt-sm-4{ padding-top: $p4 !important; }
-    .pt-sm-5{ padding-top: $gutter !important; }
-
-    .pb-sm-0{ padding-bottom: 0 !important; }
-    .pb-sm-1{ padding-bottom: $p1 !important; }
-    .pb-sm-2{ padding-bottom: $p2 !important; }
-    .pb-sm-3{ padding-bottom: $p3 !important; }
-    .pb-sm-4{ padding-bottom: $p4 !important; }
-    .pb-sm-5{ padding-bottom: $gutter !important; }
-
-    .ps-sm-0{ padding-left: 0 !important; }
-    .ps-sm-1{ padding-left: $p1 !important; }
-    .ps-sm-2{ padding-left: $p2 !important; }
-    .ps-sm-3{ padding-left: $p3 !important; }
-    .ps-sm-4{ padding-left: $p4 !important; }
-    .ps-sm-5{ padding-left: $gutter !important; }
-
-    .pe-sm-0{ padding-right: 0 !important; }
-    .pe-sm-1{ padding-right: $p1 !important; }
-    .pe-sm-2{ padding-right: $p2 !important; }
-    .pe-sm-3{ padding-right: $p3 !important; }
-    .pe-sm-4{ padding-right: $p4 !important; }
-    .pe-sm-5{ padding-right: $gutter !important; }
-
-    .px-sm-0{
-        padding-left: 0 !important; 
-        padding-right: 0 !important; 
-    }
-    .px-sm-1{
-        padding-left: $p1 !important; 
-        padding-right: $p1 !important; 
-    }
-    .px-sm-2{ 
-        padding-left: $p2 !important; 
-        padding-right: $p2 !important; 
-    }
-    .px-sm-3{ 
-        padding-left: $p3 !important; 
-        padding-right: $p3 !important; 
-    }
-    .px-sm-4{
-        padding-left: $p4 !important; 
-        padding-right: $p4 !important; 
-    }
-    .px-sm-5{
-        padding-left: $gutter !important; 
-        padding-right: $gutter !important; 
-    }
-
-    .py-sm-0{
-        padding-top: 0 !important; 
-        padding-bottom: 0 !important; 
-    }
-    .py-sm-1{
-        padding-top: $p1 !important; 
-        padding-bottom: $p1 !important; 
-    }
-    .py-sm-2{ 
-        padding-top: $p2 !important; 
-        padding-bottom: $p2 !important; 
-    }
-    .py-sm-3{ 
-        padding-top: $p3 !important; 
-        padding-bottom: $p3 !important; 
-    }
-    .py-sm-4{
-        padding-top: $p4 !important; 
-        padding-bottom: $p4 !important; 
-    }
-    .py-sm-5{
-        padding-top: $gutter !important; 
-        padding-bottom: $gutter !important; 
+// padding x
+@each $key, $value in $paddings { 
+    .px-#{$key} { 
+        padding-left: $value; 
+        padding-right: $value; 
     }
 }
-@media screen and ($minmax: $md){
-    .p-md-0{ padding: 0 !important; }
-    .p-md-1{ padding: $p1 !important; }
-    .p-md-2{ padding: $p2 !important; }
-    .p-md-3{ padding: $p3 !important; }
-    .p-md-4{ padding: $p4 !important; }
-    .p-md-5{ padding: $gutter !important; }
-
-    .pt-md-0{ padding-top: 0 !important; }
-    .pt-md-1{ padding-top: $p1 !important; }
-    .pt-md-2{ padding-top: $p2 !important; }
-    .pt-md-3{ padding-top: $p3 !important; }
-    .pt-md-4{ padding-top: $p4 !important; }
-    .pt-md-5{ padding-top: $gutter !important; }
-
-    .pb-md-0{ padding-bottom: 0 !important; }
-    .pb-md-1{ padding-bottom: $p1 !important; }
-    .pb-md-2{ padding-bottom: $p2 !important; }
-    .pb-md-3{ padding-bottom: $p3 !important; }
-    .pb-md-4{ padding-bottom: $p4 !important; }
-    .pb-md-5{ padding-bottom: $gutter !important; }
-
-    .ps-md-0{ padding-left: 0 !important; }
-    .ps-md-1{ padding-left: $p1 !important; }
-    .ps-md-2{ padding-left: $p2 !important; }
-    .ps-md-3{ padding-left: $p3 !important; }
-    .ps-md-4{ padding-left: $p4 !important; }
-    .ps-md-5{ padding-left: $gutter !important; }
-
-    .pe-md-0{ padding-right: 0 !important; }
-    .pe-md-1{ padding-right: $p1 !important; }
-    .pe-md-2{ padding-right: $p2 !important; }
-    .pe-md-3{ padding-right: $p3 !important; }
-    .pe-md-4{ padding-right: $p4 !important; }
-    .pe-md-5{ padding-right: $gutter !important; }
-
-    .px-md-0{
-        padding-left: 0 !important; 
-        padding-right: 0 !important; 
-    }
-    .px-md-1{
-        padding-left: $p1 !important; 
-        padding-right: $p1 !important; 
-    }
-    .px-md-2{ 
-        padding-left: $p2 !important; 
-        padding-right: $p2 !important; 
-    }
-    .px-md-3{ 
-        padding-left: $p3 !important; 
-        padding-right: $p3 !important; 
-    }
-    .px-md-4{
-        padding-left: $p4 !important; 
-        padding-right: $p4 !important; 
-    }
-    .px-md-5{
-        padding-left: $gutter !important; 
-        padding-right: $gutter !important; 
-    }
-
-    .py-md-0{
-        padding-top: 0 !important; 
-        padding-bottom: 0 !important; 
-    }
-    .py-md-1{
-        padding-top: $p1 !important; 
-        padding-bottom: $p1 !important; 
-    }
-    .py-md-2{ 
-        padding-top: $p2 !important; 
-        padding-bottom: $p2 !important; 
-    }
-    .py-md-3{ 
-        padding-top: $p3 !important; 
-        padding-bottom: $p3 !important; 
-    }
-    .py-md-4{
-        padding-top: $p4 !important; 
-        padding-bottom: $p4 !important; 
-    }
-    .py-md-5{
-        padding-top: $gutter !important; 
-        padding-bottom: $gutter !important; 
+// padding y
+@each $key, $value in $paddings { 
+    .py-#{$key} { 
+        padding-top: $value; 
+        padding-bottom: $value; 
     }
 }
-@media screen and ($minmax: $lg){
-    .p-lg-0{ padding: 0 !important; }
-    .p-lg-1{ padding: $p1 !important; }
-    .p-lg-2{ padding: $p2 !important; }
-    .p-lg-3{ padding: $p3 !important; }
-    .p-lg-4{ padding: $p4 !important; }
-    .p-lg-5{ padding: $gutter !important; }
-
-    .pt-lg-0{ padding-top: 0 !important; }
-    .pt-lg-1{ padding-top: $p1 !important; }
-    .pt-lg-2{ padding-top: $p2 !important; }
-    .pt-lg-3{ padding-top: $p3 !important; }
-    .pt-lg-4{ padding-top: $p4 !important; }
-    .pt-lg-5{ padding-top: $gutter !important; }
-
-    .pb-lg-0{ padding-bottom: 0 !important; }
-    .pb-lg-1{ padding-bottom: $p1 !important; }
-    .pb-lg-2{ padding-bottom: $p2 !important; }
-    .pb-lg-3{ padding-bottom: $p3 !important; }
-    .pb-lg-4{ padding-bottom: $p4 !important; }
-    .pb-lg-5{ padding-bottom: $gutter !important; }
-
-    .ps-lg-0{ padding-left: 0 !important; }
-    .ps-lg-1{ padding-left: $p1 !important; }
-    .ps-lg-2{ padding-left: $p2 !important; }
-    .ps-lg-3{ padding-left: $p3 !important; }
-    .ps-lg-4{ padding-left: $p4 !important; }
-    .ps-lg-5{ padding-left: $gutter !important; }
-
-    .pe-lg-0{ padding-right: 0 !important; }
-    .pe-lg-1{ padding-right: $p1 !important; }
-    .pe-lg-2{ padding-right: $p2 !important; }
-    .pe-lg-3{ padding-right: $p3 !important; }
-    .pe-lg-4{ padding-right: $p4 !important; }
-    .pe-lg-5{ padding-right: $gutter !important; }
-
-    .px-lg-0{
-        padding-left: 0 !important; 
-        padding-right: 0 !important; 
-    }
-    .px-lg-1{
-        padding-left: $p1 !important; 
-        padding-right: $p1 !important; 
-    }
-    .px-lg-2{ 
-        padding-left: $p2 !important; 
-        padding-right: $p2 !important; 
-    }
-    .px-lg-3{ 
-        padding-left: $p3 !important; 
-        padding-right: $p3 !important; 
-    }
-    .px-lg-4{
-        padding-left: $p4 !important; 
-        padding-right: $p4 !important; 
-    }
-    .px-lg-5{
-        padding-left: $gutter !important; 
-        padding-right: $gutter !important; 
-    }
-
-    .py-lg-0{
-        padding-top: 0 !important; 
-        padding-bottom: 0 !important; 
-    }
-    .py-lg-1{
-        padding-top: $p1 !important; 
-        padding-bottom: $p1 !important; 
-    }
-    .py-lg-2{ 
-        padding-top: $p2 !important; 
-        padding-bottom: $p2 !important; 
-    }
-    .py-lg-3{ 
-        padding-top: $p3 !important; 
-        padding-bottom: $p3 !important; 
-    }
-    .py-lg-4{
-        padding-top: $p4 !important; 
-        padding-bottom: $p4 !important; 
-    }
-    .py-lg-5{
-        padding-top: $gutter !important; 
-        padding-bottom: $gutter !important; 
-    }
-}
-@media screen and ($minmax: $xl){
-    .p-xl-0{ padding: 0 !important; }
-    .p-xl-1{ padding: $p1 !important; }
-    .p-xl-2{ padding: $p2 !important; }
-    .p-xl-3{ padding: $p3 !important; }
-    .p-xl-4{ padding: $p4 !important; }
-    .p-xl-5{ padding: $gutter !important; }
-
-    .pt-xl-0{ padding-top: 0 !important; }
-    .pt-xl-1{ padding-top: $p1 !important; }
-    .pt-xl-2{ padding-top: $p2 !important; }
-    .pt-xl-3{ padding-top: $p3 !important; }
-    .pt-xl-4{ padding-top: $p4 !important; }
-    .pt-xl-5{ padding-top: $gutter !important; }
-
-    .pb-xl-0{ padding-bottom: 0 !important; }
-    .pb-xl-1{ padding-bottom: $p1 !important; }
-    .pb-xl-2{ padding-bottom: $p2 !important; }
-    .pb-xl-3{ padding-bottom: $p3 !important; }
-    .pb-xl-4{ padding-bottom: $p4 !important; }
-    .pb-xl-5{ padding-bottom: $gutter !important; }
-
-    .ps-xl-0{ padding-left: 0 !important; }
-    .ps-xl-1{ padding-left: $p1 !important; }
-    .ps-xl-2{ padding-left: $p2 !important; }
-    .ps-xl-3{ padding-left: $p3 !important; }
-    .ps-xl-4{ padding-left: $p4 !important; }
-    .ps-xl-5{ padding-left: $gutter !important; }
-
-    .pe-xl-0{ padding-right: 0 !important; }
-    .pe-xl-1{ padding-right: $p1 !important; }
-    .pe-xl-2{ padding-right: $p2 !important; }
-    .pe-xl-3{ padding-right: $p3 !important; }
-    .pe-xl-4{ padding-right: $p4 !important; }
-    .pe-xl-5{ padding-right: $gutter !important; }
-
-    .px-xl-0{
-        padding-left: 0 !important; 
-        padding-right: 0 !important; 
-    }
-    .px-xl-1{
-        padding-left: $p1 !important; 
-        padding-right: $p1 !important; 
-    }
-    .px-xl-2{ 
-        padding-left: $p2 !important; 
-        padding-right: $p2 !important; 
-    }
-    .px-xl-3{ 
-        padding-left: $p3 !important; 
-        padding-right: $p3 !important; 
-    }
-    .px-xl-4{
-        padding-left: $p4 !important; 
-        padding-right: $p4 !important; 
-    }
-    .px-xl-5{
-        padding-left: $gutter !important; 
-        padding-right: $gutter !important; 
-    }
-
-    .py-xl-0{
-        padding-top: 0 !important; 
-        padding-bottom: 0 !important; 
-    }
-    .py-xl-1{
-        padding-top: $p1 !important; 
-        padding-bottom: $p1 !important; 
-    }
-    .py-xl-2{ 
-        padding-top: $p2 !important; 
-        padding-bottom: $p2 !important; 
-    }
-    .py-xl-3{ 
-        padding-top: $p3 !important; 
-        padding-bottom: $p3 !important; 
-    }
-    .py-xl-4{
-        padding-top: $p4 !important; 
-        padding-bottom: $p4 !important; 
-    }
-    .py-xl-5{
-        padding-top: $gutter !important; 
-        padding-bottom: $gutter !important; 
-    }
-}
-@media screen and ($minmax: $xxl){
-    .p-xxl-0{ padding: 0 !important; }
-    .p-xxl-1{ padding: $p1 !important; }
-    .p-xxl-2{ padding: $p2 !important; }
-    .p-xxl-3{ padding: $p3 !important; }
-    .p-xxl-4{ padding: $p4 !important; }
-    .p-xxl-5{ padding: $gutter !important; }
-
-    .pt-xxl-0{ padding-top: 0 !important; }
-    .pt-xxl-1{ padding-top: $p1 !important; }
-    .pt-xxl-2{ padding-top: $p2 !important; }
-    .pt-xxl-3{ padding-top: $p3 !important; }
-    .pt-xxl-4{ padding-top: $p4 !important; }
-    .pt-xxl-5{ padding-top: $gutter !important; }
-
-    .pb-xxl-0{ padding-bottom: 0 !important; }
-    .pb-xxl-1{ padding-bottom: $p1 !important; }
-    .pb-xxl-2{ padding-bottom: $p2 !important; }
-    .pb-xxl-3{ padding-bottom: $p3 !important; }
-    .pb-xxl-4{ padding-bottom: $p4 !important; }
-    .pb-xxl-5{ padding-bottom: $gutter !important; }
-
-    .ps-xxl-0{ padding-left: 0 !important; }
-    .ps-xxl-1{ padding-left: $p1 !important; }
-    .ps-xxl-2{ padding-left: $p2 !important; }
-    .ps-xxl-3{ padding-left: $p3 !important; }
-    .ps-xxl-4{ padding-left: $p4 !important; }
-    .ps-xxl-5{ padding-left: $gutter !important; }
-
-    .pe-xxl-0{ padding-right: 0 !important; }
-    .pe-xxl-1{ padding-right: $p1 !important; }
-    .pe-xxl-2{ padding-right: $p2 !important; }
-    .pe-xxl-3{ padding-right: $p3 !important; }
-    .pe-xxl-4{ padding-right: $p4 !important; }
-    .pe-xxl-5{ padding-right: $gutter !important; }
-
-    .px-xxl-0{
-        padding-left: 0 !important; 
-        padding-right: 0 !important; 
-    }
-    .px-xxl-1{
-        padding-left: $p1 !important; 
-        padding-right: $p1 !important; 
-    }
-    .px-xxl-2{ 
-        padding-left: $p2 !important; 
-        padding-right: $p2 !important; 
-    }
-    .px-xxl-3{ 
-        padding-left: $p3 !important; 
-        padding-right: $p3 !important; 
-    }
-    .px-xxl-4{
-        padding-left: $p4 !important; 
-        padding-right: $p4 !important; 
-    }
-    .px-xxl-5{
-        padding-left: $gutter !important; 
-        padding-right: $gutter !important; 
-    }
-
-    .py-xxl-0{
-        padding-top: 0 !important; 
-        padding-bottom: 0 !important; 
-    }
-    .py-xxl-1{
-        padding-top: $p1 !important; 
-        padding-bottom: $p1 !important; 
-    }
-    .py-xxl-2{ 
-        padding-top: $p2 !important; 
-        padding-bottom: $p2 !important; 
-    }
-    .py-xxl-3{ 
-        padding-top: $p3 !important; 
-        padding-bottom: $p3 !important; 
-    }
-    .py-xxl-4{
-        padding-top: $p4 !important; 
-        padding-bottom: $p4 !important; 
-    }
-    .py-xxl-5{
-        padding-top: $gutter !important; 
-        padding-bottom: $gutter !important; 
+// Breakpoint Logic
+@each $k1, $v1 in $breakpoints {
+    @media screen and ($minmax: $v1){
+        // standard margins in each @media
+        @each $k2, $v2 in $paddings { 
+            .p-#{$k1}-#{$k2} { padding: $v2 !important; }
+        }
+        // padding top
+        @each $k2, $v2 in $paddings { 
+            .pt-#{$k1}-#{$k2} { padding-top: $v2 !important; }
+        }
+        // padding bottom
+        @each $k2, $v2 in $paddings { 
+            .pb-#{$k1}-#{$k2} { padding-bottom: $v2 !important; }
+        }
+        // padding start
+        @each $k2, $v2 in $paddings { 
+            .ps-#{$k1}-#{$k2} { padding-left: $v2 !important; }
+        }
+        // padding end
+        @each $k2, $v2 in $paddings { 
+            .pe-#{$k1}-#{$k2} { padding-right: $v2 !important; }
+        }
+        // padding x
+        @each $k2, $v2 in $paddings { 
+            .px-#{$k1}-#{$k2} { 
+                padding-left: $v2 !important; 
+                padding-right: $v2 !important; 
+            }
+        }
+        // padding y
+        @each $k2, $v2 in $paddings { 
+            .py-#{$k1}-#{$k2} { 
+                padding-top: $v2 !important; 
+                padding-bottom: $v2 !important; 
+            }
+        }
     }
 }
 
-.m-0{ margin: 0.25rem; }
-.m-1{ margin: $p1; }
-.m-2{ margin: $p2; }
-.m-3{ margin: $p3; }
-.m-4{ margin: $p4; }
-.m-5{ margin: $gutter; }
+// STUB Begin Margins
 
-.mt-0{ margin-top: 0; }
-.mt-1{ margin-top: $p1; }
-.mt-2{ margin-top: $p2; }
-.mt-3{ margin-top: $p3; }
-.mt-4{ margin-top: $p4; }
-.mt-5{ margin-top: $gutter; }
-
-.mb-0{ margin-bottom: 0; }
-.mb-1{ margin-bottom: $p1; }
-.mb-2{ margin-bottom: $p2; }
-.mb-3{ margin-bottom: $p3; }
-.mb-4{ margin-bottom: $p4; }
-.mb-5{ margin-bottom: $gutter; }
-
-.ms-0{ margin-left: 0; }
-.ms-1{ margin-left: $p1; }
-.ms-2{ margin-left: $p2; }
-.ms-3{ margin-left: $p3; }
-.ms-4{ margin-left: $p4; }
-.ms-5{ margin-left: $gutter; }
-
-.me-0{ margin-right: 0; }
-.me-1{ margin-right: $p1; }
-.me-2{ margin-right: $p2; }
-.me-3{ margin-right: $p3; }
-.me-4{ margin-right: $p4; }
-.me-5{ margin-right: $gutter; }
-
-.mx-0{
-    margin-left: 0; 
-    margin-right: 0; 
+// standard margins
+@each $key, $value in $paddings { 
+    .m-#{$key} { margin: $value; }
 }
-.mx-1{
-    margin-left: $p1; 
-    margin-right: $p1; 
+// margin top
+@each $key, $value in $paddings { 
+    .mt-#{$key} { margin-top: $value; }
 }
-.mx-2{
-    margin-left: $p2; 
-    margin-right: $p2; 
+// margin bottom
+@each $key, $value in $paddings { 
+    .mb-#{$key} { margin-bottom: $value; }
 }
-.mx-3{
-    margin-left: $p3; 
-    margin-right: $p3; 
+// margin start
+@each $key, $value in $paddings { 
+    .ms-#{$key} { margin-left: $value; }
 }
-.mx-4{ 
-    margin-left: $p4; 
-    margin-right: $p4; 
+// margin end
+@each $key, $value in $paddings { 
+    .me-#{$key} { margin-right: $value; }
 }
-.mx-5{ 
-    margin-left: $gutter; 
-    margin-right: $gutter; 
-}
-
-.my-0{
-    margin-top: 0; 
-    margin-bottom: 0; 
-}
-.my-1{
-    margin-top: $p1; 
-    margin-bottom: $p1; 
-}
-.my-2{
-    margin-top: $p2; 
-    margin-bottom: $p2; 
-}
-.my-3{
-    margin-top: $p3; 
-    margin-bottom: $p3; 
-}
-.my-4{ 
-    margin-top: $p4; 
-    margin-bottom: $p4; 
-}
-.my-5{ 
-    margin-top: $gutter; 
-    margin-bottom: $gutter; 
-}
-
-@media screen and ($minmax: $sm){
-    .m-sm-0{ margin: 0.25rem !important; }
-    .m-sm-1{ margin: $p1 !important; }
-    .m-sm-2{ margin: $p2 !important; }
-    .m-sm-3{ margin: $p3 !important; }
-    .m-sm-4{ margin: $p4 !important; }
-    .m-sm-5{ margin: $gutter !important; }
-
-    .mt-sm-0{ margin-top: 0 !important; }
-    .mt-sm-1{ margin-top: $p1 !important; }
-    .mt-sm-2{ margin-top: $p2 !important; }
-    .mt-sm-3{ margin-top: $p3 !important; }
-    .mt-sm-4{ margin-top: $p4 !important; }
-    .mt-sm-5{ margin-top: $gutter !important; }
-
-    .mb-sm-0{ margin-bottom: 0 !important; }
-    .mb-sm-1{ margin-bottom: $p1 !important; }
-    .mb-sm-2{ margin-bottom: $p2 !important; }
-    .mb-sm-3{ margin-bottom: $p3 !important; }
-    .mb-sm-4{ margin-bottom: $p4 !important; }
-    .mb-sm-5{ margin-bottom: $gutter !important; }
-
-    .ms-sm-0{ margin-left: 0 !important; }
-    .ms-sm-1{ margin-left: $p1 !important; }
-    .ms-sm-2{ margin-left: $p2 !important; }
-    .ms-sm-3{ margin-left: $p3 !important; }
-    .ms-sm-4{ margin-left: $p4 !important; }
-    .ms-sm-5{ margin-left: $gutter !important; }
-
-    .me-sm-0{ margin-right: 0 !important; }
-    .me-sm-1{ margin-right: $p1 !important; }
-    .me-sm-2{ margin-right: $p2 !important; }
-    .me-sm-3{ margin-right: $p3 !important; }
-    .me-sm-4{ margin-right: $p4 !important; }
-    .me-sm-5{ margin-right: $gutter !important; }
-
-    .mx-sm-0{
-        margin-left: 0 !important; 
-        margin-right: 0 !important; 
-    }
-    .mx-sm-1{
-        margin-left: $p1 !important; 
-        margin-right: $p1 !important; 
-    }
-    .mx-sm-2{
-        margin-left: $p2 !important; 
-        margin-right: $p2 !important; 
-    }
-    .mx-sm-3{
-        margin-left: $p3 !important; 
-        margin-right: $p3 !important; 
-    }
-    .mx-sm-4{ 
-        margin-left: $p4 !important; 
-        margin-right: $p4 !important; 
-    }
-    .mx-sm-5{ 
-        margin-left: $gutter !important; 
-        margin-right: $gutter !important; 
-    }
-
-    .my-sm-0{
-        margin-top: 0 !important; 
-        margin-bottom: 0 !important; 
-    }
-    .my-sm-1{
-        margin-top: $p1 !important; 
-        margin-bottom: $p1 !important; 
-    }
-    .my-sm-2{
-        margin-top: $p2 !important; 
-        margin-bottom: $p2 !important; 
-    }
-    .my-sm-3{
-        margin-top: $p3 !important; 
-        margin-bottom: $p3 !important; 
-    }
-    .my-sm-4{ 
-        margin-top: $p4 !important; 
-        margin-bottom: $p4 !important; 
-    }
-    .my-sm-5{ 
-        margin-top: $gutter !important; 
-        margin-bottom: $gutter !important; 
+// margin x
+@each $key, $value in $paddings { 
+    .mx-#{$key} { 
+        margin-left: $value; 
+        margin-right: $value; 
     }
 }
-@media screen and ($minmax: $md){
-    .m-md-0{ margin: 0.25rem !important; }
-    .m-md-1{ margin: $p1 !important; }
-    .m-md-2{ margin: $p2 !important; }
-    .m-md-3{ margin: $p3 !important; }
-    .m-md-4{ margin: $p4 !important; }
-    .m-md-5{ margin: $gutter !important; }
-
-    .mt-md-0{ margin-top: 0 !important; }
-    .mt-md-1{ margin-top: $p1 !important; }
-    .mt-md-2{ margin-top: $p2 !important; }
-    .mt-md-3{ margin-top: $p3 !important; }
-    .mt-md-4{ margin-top: $p4 !important; }
-    .mt-md-5{ margin-top: $gutter !important; }
-
-    .mb-md-0{ margin-bottom: 0 !important; }
-    .mb-md-1{ margin-bottom: $p1 !important; }
-    .mb-md-2{ margin-bottom: $p2 !important; }
-    .mb-md-3{ margin-bottom: $p3 !important; }
-    .mb-md-4{ margin-bottom: $p4 !important; }
-    .mb-md-5{ margin-bottom: $gutter !important; }
-
-    .ms-md-0{ margin-left: 0 !important; }
-    .ms-md-1{ margin-left: $p1 !important; }
-    .ms-md-2{ margin-left: $p2 !important; }
-    .ms-md-3{ margin-left: $p3 !important; }
-    .ms-md-4{ margin-left: $p4 !important; }
-    .ms-md-5{ margin-left: $gutter !important; }
-
-    .me-md-0{ margin-right: 0 !important; }
-    .me-md-1{ margin-right: $p1 !important; }
-    .me-md-2{ margin-right: $p2 !important; }
-    .me-md-3{ margin-right: $p3 !important; }
-    .me-md-4{ margin-right: $p4 !important; }
-    .me-md-5{ margin-right: $gutter !important; }
-
-    .mx-md-0{
-        margin-left: 0 !important; 
-        margin-right: 0 !important; 
-    }
-    .mx-md-1{
-        margin-left: $p1 !important; 
-        margin-right: $p1 !important; 
-    }
-    .mx-md-2{
-        margin-left: $p2 !important; 
-        margin-right: $p2 !important; 
-    }
-    .mx-md-3{
-        margin-left: $p3 !important; 
-        margin-right: $p3 !important; 
-    }
-    .mx-md-4{ 
-        margin-left: $p4 !important; 
-        margin-right: $p4 !important; 
-    }
-    .mx-md-5{ 
-        margin-left: $gutter !important; 
-        margin-right: $gutter !important; 
-    }
-
-    .my-md-0{
-        margin-top: 0 !important; 
-        margin-bottom: 0 !important; 
-    }
-    .my-md-1{
-        margin-top: $p1 !important; 
-        margin-bottom: $p1 !important; 
-    }
-    .my-md-2{
-        margin-top: $p2 !important; 
-        margin-bottom: $p2 !important; 
-    }
-    .my-md-3{
-        margin-top: $p3 !important; 
-        margin-bottom: $p3 !important; 
-    }
-    .my-md-4{ 
-        margin-top: $p4 !important; 
-        margin-bottom: $p4 !important; 
-    }
-    .my-md-5{ 
-        margin-top: $gutter !important; 
-        margin-bottom: $gutter !important; 
+// margin y
+@each $key, $value in $paddings { 
+    .my-#{$key} { 
+        margin-top: $value; 
+        margin-bottom: $value; 
     }
 }
-@media screen and ($minmax: $lg){
-    .m-lg-0{ margin: 0.25rem !important; }
-    .m-lg-1{ margin: $p1 !important; }
-    .m-lg-2{ margin: $p2 !important; }
-    .m-lg-3{ margin: $p3 !important; }
-    .m-lg-4{ margin: $p4 !important; }
-    .m-lg-5{ margin: $gutter !important; }
-
-    .mt-lg-0{ margin-top: 0 !important; }
-    .mt-lg-1{ margin-top: $p1 !important; }
-    .mt-lg-2{ margin-top: $p2 !important; }
-    .mt-lg-3{ margin-top: $p3 !important; }
-    .mt-lg-4{ margin-top: $p4 !important; }
-    .mt-lg-5{ margin-top: $gutter !important; }
-
-    .mb-lg-0{ margin-bottom: 0 !important; }
-    .mb-lg-1{ margin-bottom: $p1 !important; }
-    .mb-lg-2{ margin-bottom: $p2 !important; }
-    .mb-lg-3{ margin-bottom: $p3 !important; }
-    .mb-lg-4{ margin-bottom: $p4 !important; }
-    .mb-lg-5{ margin-bottom: $gutter !important; }
-
-    .ms-lg-0{ margin-left: 0 !important; }
-    .ms-lg-1{ margin-left: $p1 !important; }
-    .ms-lg-2{ margin-left: $p2 !important; }
-    .ms-lg-3{ margin-left: $p3 !important; }
-    .ms-lg-4{ margin-left: $p4 !important; }
-    .ms-lg-5{ margin-left: $gutter !important; }
-
-    .me-lg-0{ margin-right: 0 !important; }
-    .me-lg-1{ margin-right: $p1 !important; }
-    .me-lg-2{ margin-right: $p2 !important; }
-    .me-lg-3{ margin-right: $p3 !important; }
-    .me-lg-4{ margin-right: $p4 !important; }
-    .me-lg-5{ margin-right: $gutter !important; }
-
-    .mx-lg-0{
-        margin-left: 0 !important; 
-        margin-right: 0 !important; 
-    }
-    .mx-lg-1{
-        margin-left: $p1 !important; 
-        margin-right: $p1 !important; 
-    }
-    .mx-lg-2{
-        margin-left: $p2 !important; 
-        margin-right: $p2 !important; 
-    }
-    .mx-lg-3{
-        margin-left: $p3 !important; 
-        margin-right: $p3 !important; 
-    }
-    .mx-lg-4{ 
-        margin-left: $p4 !important; 
-        margin-right: $p4 !important; 
-    }
-    .mx-lg-5{ 
-        margin-left: $gutter !important; 
-        margin-right: $gutter !important; 
-    }
-
-    .my-lg-0{
-        margin-top: 0 !important; 
-        margin-bottom: 0 !important; 
-    }
-    .my-lg-1{
-        margin-top: $p1 !important; 
-        margin-bottom: $p1 !important; 
-    }
-    .my-lg-2{
-        margin-top: $p2 !important; 
-        margin-bottom: $p2 !important; 
-    }
-    .my-lg-3{
-        margin-top: $p3 !important; 
-        margin-bottom: $p3 !important; 
-    }
-    .my-lg-4{ 
-        margin-top: $p4 !important; 
-        margin-bottom: $p4 !important; 
-    }
-    .my-lg-5{ 
-        margin-top: $gutter !important; 
-        margin-bottom: $gutter !important; 
-    }
-}
-@media screen and ($minmax: $xl){
-    .m-xl-0{ margin: 0.25rem !important; }
-    .m-xl-1{ margin: $p1 !important; }
-    .m-xl-2{ margin: $p2 !important; }
-    .m-xl-3{ margin: $p3 !important; }
-    .m-xl-4{ margin: $p4 !important; }
-    .m-xl-5{ margin: $gutter !important; }
-
-    .mt-xl-0{ margin-top: 0 !important; }
-    .mt-xl-1{ margin-top: $p1 !important; }
-    .mt-xl-2{ margin-top: $p2 !important; }
-    .mt-xl-3{ margin-top: $p3 !important; }
-    .mt-xl-4{ margin-top: $p4 !important; }
-    .mt-xl-5{ margin-top: $gutter !important; }
-
-    .mb-xl-0{ margin-bottom: 0 !important; }
-    .mb-xl-1{ margin-bottom: $p1 !important; }
-    .mb-xl-2{ margin-bottom: $p2 !important; }
-    .mb-xl-3{ margin-bottom: $p3 !important; }
-    .mb-xl-4{ margin-bottom: $p4 !important; }
-    .mb-xl-5{ margin-bottom: $gutter !important; }
-
-    .ms-xl-0{ margin-left: 0 !important; }
-    .ms-xl-1{ margin-left: $p1 !important; }
-    .ms-xl-2{ margin-left: $p2 !important; }
-    .ms-xl-3{ margin-left: $p3 !important; }
-    .ms-xl-4{ margin-left: $p4 !important; }
-    .ms-xl-5{ margin-left: $gutter !important; }
-
-    .me-xl-0{ margin-right: 0 !important; }
-    .me-xl-1{ margin-right: $p1 !important; }
-    .me-xl-2{ margin-right: $p2 !important; }
-    .me-xl-3{ margin-right: $p3 !important; }
-    .me-xl-4{ margin-right: $p4 !important; }
-    .me-xl-5{ margin-right: $gutter !important; }
-
-    .mx-xl-0{
-        margin-left: 0 !important; 
-        margin-right: 0 !important; 
-    }
-    .mx-xl-1{
-        margin-left: $p1 !important; 
-        margin-right: $p1 !important; 
-    }
-    .mx-xl-2{
-        margin-left: $p2 !important; 
-        margin-right: $p2 !important; 
-    }
-    .mx-xl-3{
-        margin-left: $p3 !important; 
-        margin-right: $p3 !important; 
-    }
-    .mx-xl-4{ 
-        margin-left: $p4 !important; 
-        margin-right: $p4 !important; 
-    }
-    .mx-xl-5{ 
-        margin-left: $gutter !important; 
-        margin-right: $gutter !important; 
-    }
-
-    .my-xl-0{
-        margin-top: 0 !important; 
-        margin-bottom: 0 !important; 
-    }
-    .my-xl-1{
-        margin-top: $p1 !important; 
-        margin-bottom: $p1 !important; 
-    }
-    .my-xl-2{
-        margin-top: $p2 !important; 
-        margin-bottom: $p2 !important; 
-    }
-    .my-xl-3{
-        margin-top: $p3 !important; 
-        margin-bottom: $p3 !important; 
-    }
-    .my-xl-4{ 
-        margin-top: $p4 !important; 
-        margin-bottom: $p4 !important; 
-    }
-    .my-xl-5{ 
-        margin-top: $gutter !important; 
-        margin-bottom: $gutter !important; 
-    }
-}
-@media screen and ($minmax: $xxl){
-    .m-xxl-0{ margin: 0.25rem !important; }
-    .m-xxl-1{ margin: $p1 !important; }
-    .m-xxl-2{ margin: $p2 !important; }
-    .m-xxl-3{ margin: $p3 !important; }
-    .m-xxl-4{ margin: $p4 !important; }
-    .m-xxl-5{ margin: $gutter !important; }
-
-    .mt-xxl-0{ margin-top: 0 !important; }
-    .mt-xxl-1{ margin-top: $p1 !important; }
-    .mt-xxl-2{ margin-top: $p2 !important; }
-    .mt-xxl-3{ margin-top: $p3 !important; }
-    .mt-xxl-4{ margin-top: $p4 !important; }
-    .mt-xxl-5{ margin-top: $gutter !important; }
-
-    .mb-xxl-0{ margin-bottom: 0 !important; }
-    .mb-xxl-1{ margin-bottom: $p1 !important; }
-    .mb-xxl-2{ margin-bottom: $p2 !important; }
-    .mb-xxl-3{ margin-bottom: $p3 !important; }
-    .mb-xxl-4{ margin-bottom: $p4 !important; }
-    .mb-xxl-5{ margin-bottom: $gutter !important; }
-
-    .ms-xxl-0{ margin-left: 0 !important; }
-    .ms-xxl-1{ margin-left: $p1 !important; }
-    .ms-xxl-2{ margin-left: $p2 !important; }
-    .ms-xxl-3{ margin-left: $p3 !important; }
-    .ms-xxl-4{ margin-left: $p4 !important; }
-    .ms-xxl-5{ margin-left: $gutter !important; }
-
-    .me-xxl-0{ margin-right: 0 !important; }
-    .me-xxl-1{ margin-right: $p1 !important; }
-    .me-xxl-2{ margin-right: $p2 !important; }
-    .me-xxl-3{ margin-right: $p3 !important; }
-    .me-xxl-4{ margin-right: $p4 !important; }
-    .me-xxl-5{ margin-right: $gutter !important; }
-
-    .mx-xxl-0{
-        margin-left: 0 !important; 
-        margin-right: 0 !important; 
-    }
-    .mx-xxl-1{
-        margin-left: $p1 !important; 
-        margin-right: $p1 !important; 
-    }
-    .mx-xxl-2{
-        margin-left: $p2 !important; 
-        margin-right: $p2 !important; 
-    }
-    .mx-xxl-3{
-        margin-left: $p3 !important; 
-        margin-right: $p3 !important; 
-    }
-    .mx-xxl-4{ 
-        margin-left: $p4 !important; 
-        margin-right: $p4 !important; 
-    }
-    .mx-xxl-5{ 
-        margin-left: $gutter !important; 
-        margin-right: $gutter !important; 
-    }
-
-    .my-xxl-0{
-        margin-top: 0 !important; 
-        margin-bottom: 0 !important; 
-    }
-    .my-xxl-1{
-        margin-top: $p1 !important; 
-        margin-bottom: $p1 !important; 
-    }
-    .my-xxl-2{
-        margin-top: $p2 !important; 
-        margin-bottom: $p2 !important; 
-    }
-    .my-xxl-3{
-        margin-top: $p3 !important; 
-        margin-bottom: $p3 !important; 
-    }
-    .my-xxl-4{ 
-        margin-top: $p4 !important; 
-        margin-bottom: $p4 !important; 
-    }
-    .my-xxl-5{ 
-        margin-top: $gutter !important; 
-        margin-bottom: $gutter !important; 
+// Breakpoint Logic
+@each $k1, $v1 in $breakpoints {
+    @media screen and ($minmax: $v1){
+        // standard margins in each @media
+        @each $k2, $v2 in $paddings { 
+            .m-#{$k1}-#{$k2} { margin: $v2 !important; }
+        }
+        // margin top
+        @each $k2, $v2 in $paddings { 
+            .mt-#{$k1}-#{$k2} { margin-top: $v2 !important; }
+        }
+        // margin bottom
+        @each $k2, $v2 in $paddings { 
+            .mb-#{$k1}-#{$k2} { margin-bottom: $v2 !important; }
+        }
+        // margin start
+        @each $k2, $v2 in $paddings { 
+            .ms-#{$k1}-#{$k2} { margin-left: $v2 !important; }
+        }
+        // margin end
+        @each $k2, $v2 in $paddings { 
+            .me-#{$k1}-#{$k2} { margin-right: $v2 !important; }
+        }
+        // margin x
+        @each $k2, $v2 in $paddings { 
+            .mx-#{$k1}-#{$k2} { 
+                margin-left: $v2 !important; 
+                margin-right: $v2 !important; 
+            }
+        }
+        // margin y
+        @each $k2, $v2 in $paddings { 
+            .my-#{$k1}-#{$k2} { 
+                margin-top: $v2 !important; 
+                margin-bottom: $v2 !important; 
+            }
+        }
     }
 }
 
@@ -1595,28 +384,10 @@
 .d-flex{ display: flex; }
 .d-block{ display: block; }
 
-@media screen and ($minmax: $sm){
-    .d-sm-none{ display: none !important; }
-    .d-sm-flex{ display: flex !important; }
-    .d-sm-block{ display: block !important; }
-}
-@media screen and ($minmax: $md){
-    .d-md-none{ display: none !important; }
-    .d-md-flex{ display: flex !important; }
-    .d-md-block{ display: block !important; }
-}
-@media screen and ($minmax: $lg){
-    .d-lg-none{ display: none !important; }
-    .d-lg-flex{ display: flex !important; }
-    .d-lg-block{ display: block !important; }
-}
-@media screen and ($minmax: $xl){
-    .d-xl-none{ display: none !important; }
-    .d-xl-flex{ display: flex !important; }
-    .d-xl-block{ display: block !important; }
-}
-@media screen and ($minmax: $xxl){
-    .d-xxl-none{ display: none !important; }
-    .d-xxl-flex{ display: flex !important; }
-    .d-xxl-block{ display: block !important; }
+@each $key, $value in $breakpoints {
+    @media screen and ($minmax: $value){
+        .d-#{$key}-none{ display: none !important; }
+        .d-#{$key}-flex{ display: flex !important; }
+        .d-#{$key}-block{ display: block !important; }
+    }
 }
