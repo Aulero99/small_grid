@@ -2,42 +2,38 @@
   <div class="container">
     <div class="row">
         
-        <div class="col-12 p-2">
-          <div class="red fill p-2">
-            col-12
-          </div>
+        <div class="col-12 col-sm-6 p-2 orange">
+          100% on lg, 50% on sm
         </div>
 
-        <div class="col-6 col-sm-12 p-2">
-          <div class="orange p-2">
-            col-6
-          </div>
-        </div>
-        
-        <div class="col-6 col-sm-12 col-lg-3 p-2">
-          <div class="orange fill flex-row justify-center align-center p-2">
-            col-6 centered
-          </div>
-        </div>
-        
-        <div class="col-2 flex-col justify-start p-2">
-          <div class="blue p-2">
-            col-2 
-          </div>
+        <div class="col-12 col-sm-6 p-2 red">
+          100% on lg, 50% on sm
         </div>
 
-        <div class="col-fill p-2">
-          <div class="orange p-2">
+        <div class="col-6 col-sm-12 p-2 purple">
+          50% on lg, 100% on sm
+        </div>
+
+        <div class="col-6 col-sm-12 p-2 blue">
+          50% on lg, 100% on sm
+        </div>
+        
+        <div class="col-12 p-2 teal d-sm-none">
+            Only seen on sm up displays
+        </div>
+        
+        <div class="col-12 p-2 green d-none d-sm-flex">
+            Only seen on sm down displays
+        </div>
+
+        <div class="col-10 p-2 red">
+          col-11
+        </div>
+        
+        <div class="col-fill p-2 orange">
             col-fill
-          </div>
         </div>
         
-        <div class="col-11 p-2">
-          <div class="blue fill p-2">
-            col-11
-          </div>
-        </div>
-
         <div class="col-12 m-4">
           <div class="red fill p-2">
             col-12 with m-2
@@ -99,6 +95,11 @@
             </div>
           </div>
         </div>
+        <div class="col-12">
+          <div class="tall-element fill-x blue flex-col justify-center align-center">
+            tall element
+          </div>
+        </div>
     </div>
   </div>
 </template>
@@ -117,8 +118,13 @@
 </script>
 
 <style lang="scss" scoped>
-.red{ background-color: red; }
 .orange{ background-color: orange; }
-.blue{ background-color: blue; }
-.green{ background-color: green; }
+.red{ background-color: red; }
+.purple{ background-color: purple; color: white;} 
+.blue{ background-color: blue; color: white; }
+.teal{ background-color: teal; }
+.green{ background-color: green; color: white; }
+.tall-element{
+  height: 50vh;
+}
 </style>

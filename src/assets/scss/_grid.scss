@@ -1,11 +1,21 @@
 *{ box-sizing: border-box; }
 
 .container{
-    width: 100%;
+    display: grid;
+    max-width: 100%;
+    overflow-x: hidden;
     margin-left: auto;
     margin-right: auto;
     padding-left: calc($gutter * .5);
     padding-right: calc($gutter * .5); 
+
+    @media screen and (max-width: $sm){max-width: calc($sm - $gutter);}
+    @media screen and (max-width: $md){max-width: calc($md - $gutter);}
+    @media screen and (max-width: $lg){max-width: calc($lg - $gutter);}
+    @media screen and (max-width: $xl){max-width: calc($xl - $gutter);}
+    @media screen and (max-width: $xxl){max-width: calc($xxl - $gutter);}
+
+
 
     .row{
         display: flex;
@@ -14,7 +24,7 @@
         margin-left: calc($gutter * -.5);
         margin-right: calc($gutter * -.5);
         .col-fill{
-            width: auto;
+            width: 0;
             flex-grow: 1;
         }
 
@@ -215,3 +225,28 @@
 .mb-5{ margin-bottom: $gutter; }
 
 .b-0{ border: 0 !important; }
+
+.d-none{ display: none; }
+
+.d-flex{ display: flex; }
+
+@media screen and (max-width: $sm){
+    .d-sm-none{ display: none !important; }
+    .d-sm-flex{ display: flex !important; }
+}
+@media screen and (max-width: $md){
+    .d-md-none{ display: none !important; }
+    .d-md-flex{ display: flex !important; }
+}
+@media screen and (max-width: $lg){
+    .d-lg-none{ display: none !important; }
+    .d-lg-flex{ display: flex !important; }
+}
+@media screen and (max-width: $xl){
+    .d-xl-none{ display: none !important; }
+    .d-xl-flex{ display: flex !important; }
+}
+@media screen and (max-width: $xxl){
+    .d-xxl-none{ display: none !important; }
+    .d-xxl-flex{ display: flex !important; }
+}

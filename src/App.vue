@@ -1,5 +1,9 @@
 <template>
-<GridTest/>
+  <header></header>
+  <main>
+    <GridTest/>
+  </main>
+  <footer></footer>
 </template>
 
 <script>

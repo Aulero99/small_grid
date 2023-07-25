@@ -5,3 +5,7 @@ Using Bootstrap-like naming conventions, Small_Grid is a lightweight scss altern
 ## Using: Vite, Vue, & Sass
 
 NOTE: After forking this file, you need to run npm i to download and install dependencies of vue and vite, see documentation of vue and vite for more information.
+
+### 1.0.4 Release Notes
+
+Fixed glitch involving scrollbar causing horizontal scroll
