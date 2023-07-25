@@ -40,4 +40,8 @@ Versions:
  - @media grid rules added
  - Added template for default dark mode  
 
+ ### 1.0.6 Release Notes
+
+ - Issues in container not sizing appropriately when using d-flex, changed to d-block
+
 #### Using: Vite, Vue, & Sass

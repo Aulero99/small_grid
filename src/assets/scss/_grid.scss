@@ -6,7 +6,7 @@ $paddings:("0":0, "1":$p1, "2":$p2, "3":$p3, "4":$p4, "5":$gutter);
 *{ box-sizing: border-box; }
 
 .container{
-    display: flex;
+    display: block;
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
