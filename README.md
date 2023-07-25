@@ -10,7 +10,7 @@ NOTE: After forking this file, you need to run npm i to download and install dep
 
 ## Just Want the Css?
 
-<https://cdn.jsdelivr.net/gh/Aulero99/small_grid@master/src/assets/scss/min.css>
+<https://cdn.jsdelivr.net/gh/Aulero99/small_grid@master/min.css>
 
 ### 1.0.5 Release Notes
 
