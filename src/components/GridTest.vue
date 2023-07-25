@@ -54,39 +54,55 @@
             col-12 with m-5
         </div>
 
-        <div class="col-12 flex-row justify-end p-2">
+        <div class="col-12 flex-row justify-end teal">
           <div class="orange p-2">
-            Justify End Flex Row
+            Flex Row Justify End Element
           </div>
         </div>
-        <div class="col-6 p-2">
-          <div class="blue p-2">
-            col-6
+
+        <div class="col-12 flex-row justify-center teal">
+          <div class="orange p-2">
+            Flex Row Justify Center Element
           </div>
         </div>
-        <div class="col-6">
+
+        <div class="col-12 flex-row justify-start teal">
+          <div class="orange p-2">
+            Flex Row Justify Start Element
+          </div>
+        </div>
+
+        <div class="col-6 p-2 green flex-col justify-end">
+            <div class="orange p-2">
+              flex-col justify-end
+            </div>
+        </div>
+        <div class="col-6 p-2 red">
           <div class="container">
             <div class="row">
+              <div class="col-12 orange p-2">
+                padding added to top and bottom to show spacing
+              </div>
 
-              <div class="col-12 p-2">
+              <div class="col-12 pt-2">
                 <div class="green p-2">
                   new container col-12
                 </div>
               </div>
 
-              <div class="col-6 p-2">
+              <div class="col-6 pt-2">
                 <div class="orange p-2">
                   col-6
                 </div>
               </div>
 
-              <div class="col-3 p-2">
+              <div class="col-3 pt-2">
                 <div class="orange p-2">
                   col-3
                 </div>
               </div>
 
-              <div class="col-3 p-2">
+              <div class="col-3 pt-2">
                 <div class="orange p-2">
                   col-3
                 </div>
@@ -117,11 +133,11 @@
 </script>
 
 <style lang="scss" scoped>
-.orange{ background-color: orange; }
-.red{ background-color: red; }
+.orange{ background-color: orange; color: black;}
+.red{ background-color: red; color: white;}
 .purple{ background-color: purple; color: white;} 
 .blue{ background-color: blue; color: white; }
-.teal{ background-color: teal; }
+.teal{ background-color: teal; color: black;}
 .green{ background-color: green; color: white; }
 .tall-element{
   height: 50vh;

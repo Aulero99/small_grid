@@ -1,0 +1,13 @@
+@media (prefers-color-scheme: dark) {
+    :root{
+        --bg: rgb(35, 35, 35);
+        --txt: rgb(252, 252, 252);
+    }
+}
+
+@media (prefers-color-scheme: default) {
+    :root{
+        --bg: rgb(252, 252, 252);
+        --txt: rgb(35, 35, 35);
+    }
+}
