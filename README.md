@@ -14,6 +14,10 @@ Current Version:
 
 <https://cdn.jsdelivr.net/gh/Aulero99/small_grid@master/min/min.css>
 
+Or just the grid - 
+
+<https://cdn.jsdelivr.net/gh/Aulero99/small_grid@master/min/min_grid.css>
+
 Earlier Versions:
 
 <https://cdn.jsdelivr.net/gh/Aulero99/small_grid@master/min/min_0_0_0.css>
