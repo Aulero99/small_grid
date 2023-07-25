@@ -6,8 +6,6 @@ Using Bootstrap-like naming conventions, Small_Grid is a lightweight scss altern
 
 This template comes with nearly everything pre-variabled out in the _variables.scss file. By default the gutter is set to 1.5rem, and all spacing is defined off it, but for a blockier or more condensed look feel free to adjust this to your liking. In addition, this template by default uses max-width for the scss media rules, however this can also be changed by swapping the variable out.
 
-## Using: Vite, Vue, & Sass
-
 NOTE: After forking this file, you need to run npm i to download and install dependencies of vue and vite, see documentation of vue and vite for more information.
 
 ### 1.0.5 Release Notes
@@ -15,3 +13,5 @@ NOTE: After forking this file, you need to run npm i to download and install dep
  - Fixed glitch involving scrollbar causing horizontal scroll
  - @media grid rules added
  - Added template for default dark mode  
+
+## Using: Vite, Vue, & Sass
