@@ -8,6 +8,10 @@ This template comes with nearly everything pre-variabled out in the _variables.s
 
 NOTE: After forking this file, you need to run npm i to download and install dependencies of vue and vite, see documentation of vue and vite for more information.
 
+## Just Want the Css?
+
+<https://cdn.jsdelivr.net/gh/Aulero99/small_grid@master/src/assets/scss/min.css>
+
 ### 1.0.5 Release Notes
 
  - Fixed glitch involving scrollbar causing horizontal scroll
