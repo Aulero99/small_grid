@@ -1,13 +1,55 @@
 @media (prefers-color-scheme: dark) {
     :root{
-        --bg: rgb(35, 35, 35);
-        --txt: rgb(252, 252, 252);
+        --bg1: $bg1;
+        --bg2: $bg2;
+        --bg3: $bg3;
+        --bg4: $bg4;
+        --bg5: $bg5;
+        --cs1: $cs1;
+        --cs2: $cs2;
+        --cs3: $cs3;
+        --cs4: $cs4;
+        --cs5: $cs5;
+        --txt1: $txt1;
+        --txt2: $txt2;
+        --txt3: $txt3;
+        --txt4: $txt4;
+        --txt5: $txt5;
     }
 }
 
 @media (prefers-color-scheme: default) {
     :root{
-        --bg: rgb(252, 252, 252);
-        --txt: rgb(35, 35, 35);
+        --bg1: $bg1;
+        --bg2: $bg2;
+        --bg3: $bg3;
+        --bg4: $bg4;
+        --bg5: $bg5;
+        --cs1: $cs1;
+        --cs2: $cs2;
+        --cs3: $cs3;
+        --cs4: $cs4;
+        --cs5: $cs5;
+        --txt1: $txt1;
+        --txt2: $txt2;
+        --txt3: $txt3;
+        --txt4: $txt4;
+        --txt5: $txt5;
     }
 }
+
+$cs1: #5762D5;
+$cs2: #FB4D3D;
+$cs3: #A9F0D1;
+$cs4: #020100;
+$cs5: #FFF;
+$bg1: #FFF;
+$bg2: #FFF;
+$bg3: #FFF;
+$bg4: #FFF;
+$bg5: #FFF;
+$txt1: #020100;
+$txt2: #020100;
+$txt3: #020100;
+$txt4: #020100;
+$txt5: #020100;

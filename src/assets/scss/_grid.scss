@@ -15,9 +15,9 @@ $paddings:("0":0, "1":$p1, "2":$p2, "3":$p3, "4":$p4, "5":$gutter);
     padding-left: calc($gutter * .5);
     padding-right: calc($gutter * .5); 
 
-    @each $key, $value in $breakpoints{
-        @media screen and (max-width: $value){max-width: calc($value - $gutter) !important;}
-    }
+    // @each $key, $value in $breakpoints{
+    //     @media screen and (max-width: $value){max-width: calc($value - $gutter) !important;}
+    // }
 
     .row{
         display: flex;

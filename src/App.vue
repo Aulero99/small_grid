@@ -1,27 +1,30 @@
 <template>
   <header></header>
   <main>
-    <GridTest/>
+    <!-- <GridTest/> -->
+    <DesignMock/>
   </main>
   <footer></footer>
 </template>
 
 <script>
-import { computed } from 'vue';
+import { computed, onBeforeMount, onMounted } from 'vue';
+// @ts-ignore
 import { AppState } from './AppState';
+// @ts-ignore
+import { sizer } from './utils/Sizer';
+
 
 export default {
   setup(){
-    return{
-      appState: computed(() => AppState)
-    }
+    onBeforeMount(()=>{
+      sizer.setup()
+    })
+    return{ appState: computed(() => AppState) }
   }
 }
 </script>
 
 <style lang="scss">
 @import "./assets/scss/main.scss";
-body{
-  margin: 0;
-}
 </style>
