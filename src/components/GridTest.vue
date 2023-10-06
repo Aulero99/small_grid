@@ -7,10 +7,10 @@
         </div>
 
         <div class="col-12 col-sm-6 p-2 red">
-          100% on lg, 50% on sm
+          100% on lg, 50% on sm.
         </div>
 
-        <div class="col-6 col-sm-12 p-2 purple">
+        <div class="col-6 col-sm-12 p-2 purple"> 
           50% on lg, 100% on sm
         </div>
 
