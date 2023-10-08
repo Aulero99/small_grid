@@ -1,6 +1,6 @@
 # Small_Grid, A Smaller Sass Grid System
 
-Using Bootstrap-like naming conventions, Small_Grid is a lightweight scss alternative for use in smaller projects where the weight of bootstrap would be unwarranted. There are no default styles, bloat or otherwise large unnecessary includes to bog down the project, only a small simple to use grid system with margin and padding built in, just like in bootstrap.  
+Using Bootstrap-like naming conventions, Small_Grid is a lightweight scss alternative for use in smaller projects where the weight of bootstrap would be unwarranted. There are no default styles, bloat or otherwise large unnecessary included elements to bog down the project, only a small simple to use grid system with margin and padding built in, just like in bootstrap. 
 
 ## Usage Notes
 
@@ -32,7 +32,8 @@ Just replace the 0_0_0 with the desired min file
 Versions:
 
  - 1.0.5
- - 1.0.6 
+ - 1.0.6
+ - 1.0.9 - current 
 
 
 ### 1.0.5 Release Notes
