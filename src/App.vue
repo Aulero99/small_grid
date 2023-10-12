@@ -12,13 +12,12 @@ import { computed, onBeforeMount, onMounted } from 'vue';
 // @ts-ignore
 import { AppState } from './AppState';
 // @ts-ignore
-import { sizer } from './utils/Sizer';
-
+import { smallgrid } from './smallgrid/dist/js/smallgrid';
 
 export default {
   setup(){
     onBeforeMount(()=>{
-      sizer.setup()
+      smallgrid.setup()
     })
     return{ appState: computed(() => AppState) }
   }
