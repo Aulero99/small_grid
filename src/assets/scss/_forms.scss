@@ -1,16 +1,9 @@
 @import "./_themes.scss";
 
-
-$danger: #ea0606;
-$warning: #F1D302;
-$success: #00f867;
-
 $text: $txt1;
 $inputbg: $cs1;
 $inputborder: $cs1;
 $buttontxt: $cs1;
-
-
 
 input,
 textarea,
@@ -26,6 +19,7 @@ select {
 }
 
 }
+
 form:invalid button[type="submit"] {
   filter: grayscale(1);
   color: $text;
@@ -64,6 +58,7 @@ textarea{
       }
     }
 }
+
 small{
   margin-left: 25px;
   position: relative;
@@ -75,6 +70,7 @@ small{
     left: -15px;
   }
 }
+
 .form-input-slide{
     position: relative;
     display: flex;

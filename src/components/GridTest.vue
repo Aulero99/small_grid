@@ -141,6 +141,8 @@
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/scss/main.scss";
+
 .orange{ background-color: orange; color: black;}
 .red{ background-color: red; color: white;}
 .purple{ background-color: purple; color: white;} 
@@ -148,6 +150,6 @@
 .teal{ background-color: teal; color: black;}
 .green{ background-color: green; color: white; }
 .tall-element{
-  height: 50vh;
+  height: cvh(76);
 }
 </style>
