@@ -2,6 +2,7 @@
   <header></header>
   <main>
     <GridTest/>
+    <!-- <Demo/> -->
     <!-- <DesignMock/> -->
   </main>
   <footer></footer>
@@ -15,22 +16,27 @@ import { AppState } from './AppState';
 import { suspendors } from 'suspendors';
 
 export default {
+
+
   setup(){
     function respond(text){
       console.log(text)
+
     }
     onBeforeMount(()=>{
-      suspendors.under(respond.bind(null, 'under'))
-      suspendors.sm(respond.bind(null, 'sm'))
-      suspendors.md(respond.bind(null, 'md'))
-      suspendors.lg(respond.bind(null, 'lg'))
-      suspendors.xl(respond.bind(null, 'xl'))
-      suspendors.xxl(respond.bind(null, 'xxl'))
-      suspendors.over(respond.bind(null, 'over'))
-      suspendors.portrait(respond.bind(null, 'portrait'))
-      suspendors.landscape(respond.bind(null, 'landscape'))
+      suspendors.under(respond.bind(null, 'breakpoint: under'))
+      suspendors.sm(respond.bind(null, 'breakpoint: sm'))
+      suspendors.md(respond.bind(null, 'breakpoint: md'))
+      suspendors.lg(respond.bind(null, 'breakpoint: lg'))
+      suspendors.xl(respond.bind(null, 'breakpoint: xl'))
+      suspendors.xxl(respond.bind(null, 'breakpoint: xxl'))
+      suspendors.over(respond.bind(null, 'breakpoint: over'))
+      suspendors.portrait(respond.bind(null, 'orientation: portrait'))
+      suspendors.landscape(respond.bind(null, 'orientation: landscape'))
     })
-    onMounted(()=>{ suspendors.setup() })
+    onMounted(()=>{ 
+      suspendors.setup() 
+    })
     return{ appState: computed(() => AppState) }
   }
 }

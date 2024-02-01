@@ -1,4 +1,6 @@
 @import "./_variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap');
+
 
 #app {
     display: flex;
@@ -36,4 +38,8 @@ $headings:("h1":$h1, "h2":$h2, "h3":$h3, "h4":$h4, "h5":$h5);
             font-weight: bold;
         }
     }    
+}
+
+h1{
+    font-family: "bodoni-moda", serif;
 }
