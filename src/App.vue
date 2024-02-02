@@ -13,29 +13,19 @@ import { computed, onBeforeMount, onMounted } from 'vue';
 // @ts-ignore
 import { AppState } from './AppState';
 // @ts-ignore
-import { suspendors } from 'suspendors';
+import { breakpointLogic } from './services/BreakpointLogic.js';
 
 export default {
 
 
   setup(){
-    function respond(text){
-      console.log(text)
 
-    }
     onBeforeMount(()=>{
-      suspendors.under(respond.bind(null, 'breakpoint: under'))
-      suspendors.sm(respond.bind(null, 'breakpoint: sm'))
-      suspendors.md(respond.bind(null, 'breakpoint: md'))
-      suspendors.lg(respond.bind(null, 'breakpoint: lg'))
-      suspendors.xl(respond.bind(null, 'breakpoint: xl'))
-      suspendors.xxl(respond.bind(null, 'breakpoint: xxl'))
-      suspendors.over(respond.bind(null, 'breakpoint: over'))
-      suspendors.portrait(respond.bind(null, 'orientation: portrait'))
-      suspendors.landscape(respond.bind(null, 'orientation: landscape'))
+      // @ts-ignore
+      breakpointLogic.respondOnline()
     })
     onMounted(()=>{ 
-      suspendors.setup() 
+      console.log('onmount')
     })
     return{ appState: computed(() => AppState) }
   }

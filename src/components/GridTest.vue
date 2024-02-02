@@ -111,8 +111,11 @@
           </div>
         </div>
         <div class="col-12">
-          <div class="tall-element fill-x blue flex-col justify-center align-center">
-            tall element
+          <div class="cvh-100 fill-x blue flex-col justify-center align-center">
+            cvh-100
+          </div>
+          <div class="cvh-sm-25 cvh-md-75 cvh-50 fill-x purple flex-col justify-center align-center">
+            cvh-sm-25, cvh-md-75, cvh-50
           </div>
         </div>
     </div>
@@ -149,7 +152,4 @@
 .blue{ background-color: blue; color: white; }
 .teal{ background-color: teal; color: black;}
 .green{ background-color: green; color: white; }
-.tall-element{
-  height: cvh(76);
-}
 </style>
