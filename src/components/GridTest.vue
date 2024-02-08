@@ -111,11 +111,33 @@
           </div>
         </div>
         <div class="col-12">
-          <div class="cvh-100 fill-x blue flex-col justify-center align-center">
-            cvh-100
+          <div class="vh-100 fill-x blue flex-col justify-center align-center">
+            vh-100 
+            <br/>
+            Absolute Values:
+            <br/>
+            W: {{ width }} H: {{ height }}
+            <br/>
+            Calculated Values:
+            <br/>
+            W: {{ calcWidth }} H: {{ calcHeight }}
           </div>
-          <div class="cvh-sm-25 cvh-md-75 cvh-50 fill-x purple flex-col justify-center align-center">
-            cvh-sm-25, cvh-md-75, cvh-50
+
+          <div class="vh-100 fill-x orange flex-col justify-center align-center">
+            vh-100
+            <br/>
+            Notch Values:
+            <br/>
+            sat:{{ sat }}, sab:{{ sab }}, sar:{{ sar }}, sal:{{ sal }},
+
+          </div>
+
+          <div class="vh-100 fill-x green flex-col justify-center align-center">
+            vh-100
+          </div>
+
+          <div class="vh-sm-25 vh-md-75 vh-50 fill-x purple flex-col justify-center align-center">
+            vh-sm-25, vh-md-75, vh-50
           </div>
         </div>
     </div>
@@ -131,13 +153,47 @@
 </template>
   
 <script>
+import { computed, onMounted, ref } from 'vue'
   export default {
-    props:{
-
-    },
     setup() {
+
+      let w = ref(0)
+      let h = ref(0)
+      let cw = ref(0)
+      let ch = ref(0)
+      let sat = ref(null)
+      let sab = ref(null)
+      let sar = ref(null)
+      let sal = ref(null)
+
+      function update(){
+        sat.value = getComputedStyle(document.documentElement).getPropertyValue("--sat")
+        sab.value = getComputedStyle(document.documentElement).getPropertyValue("--sab")
+        sar.value = getComputedStyle(document.documentElement).getPropertyValue("--sar")
+        sal.value = getComputedStyle(document.documentElement).getPropertyValue("--sal")
+        w.value =  window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+        h.value = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+
+        if(h.value < ch.value && w.value == cw.value){return}
+
+        cw.value = w.value
+        ch.value = h.value
+      }
+
+      onMounted(()=>{
+        update()
+        window.addEventListener('resize', update)
+      })
+
       return {
-  
+        width: w,
+        height: h,
+        calcWidth: cw,
+        calcHeight: ch,
+        sat: sat,
+        sab: sab,
+        sar: sar,
+        sal: sal,
       }
     }
   }
