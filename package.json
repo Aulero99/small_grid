@@ -11,7 +11,8 @@
   "dependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
     "node-sass-json-importer": "^4.3.0",
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "suspendors": "1.4.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
