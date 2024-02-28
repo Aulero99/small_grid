@@ -1,9 +1,9 @@
 <template>
   <header></header>
   <main>
-    <GridTest/>
-    <!-- <Demo/> -->
-    <!-- <DesignMock/> -->
+    <Grid/>
+    <Utilities/>
+    <Root/>
   </main>
   <footer></footer>
 </template>
@@ -14,6 +14,7 @@ import { computed, onBeforeMount, onMounted } from 'vue';
 import { AppState } from './AppState';
 // @ts-ignore
 import { breakpointLogic } from './services/BreakpointLogic.js';
+import { options, suspendors } from 'suspendors';
 
 export default {
 
@@ -22,7 +23,8 @@ export default {
 
     onBeforeMount(()=>{
       // @ts-ignore
-      breakpointLogic.respondOnline()
+      options.dev()
+      // breakpointLogic.respondOnline()
     })
     onMounted(()=>{ 
       console.log('onmount')

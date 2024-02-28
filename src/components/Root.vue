@@ -1,10 +1,10 @@
 <template>
-<div class="container">
-    <section class="row">
+<div class="container pb-5">
+    <section class="row mt-2">
         <div class="col-12">
-            <h1>
-                Design Mock
-            </h1>
+            <h2>
+                _Root
+            </h2>
         </div>
     </section>
     <section class="row">
