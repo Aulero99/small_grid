@@ -1,5 +1,5 @@
 <template>
-  <div class="container pb-5">
+  <div class="container-solid pb-5">
     <Cols/>
     <Breakpoints/>
     <GridReverse/>

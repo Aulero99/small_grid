@@ -1,5 +1,5 @@
 <template>
-      <div class="row">
+      <div class="row mt-2">
         <div class="col-12">
           <h2>
             Breakpoints
