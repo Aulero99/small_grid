@@ -1,5 +1,5 @@
 <template>
-    <div class="container pb-5">
+    <div class="container-solid pb-5">
         <Elevation/>
     </div>
 </template>
@@ -16,8 +16,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-@import "../assets/scss/_variables.scss";
-
-</style>

@@ -1,6 +1,6 @@
 <template>
     <div class="row mt-2">
-        <div class="col-12">
+        <div class="col-12 p-2">
             <h2>
                 Columns
             </h2>
@@ -28,21 +28,3 @@
         </div>
     </div>
 </template>
-  
-<script>
-  export default {
-    props:{
-
-    },
-    setup() {
-      return {
-  
-      }
-    }
-  }
-</script>
-
-<style lang="scss" scoped>
-@import "../assets/scss/_variables.scss";
-
-</style>

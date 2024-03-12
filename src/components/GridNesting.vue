@@ -1,6 +1,6 @@
 <template>
         <div class="row my-2">
-          <div class="col-12">
+          <div class="col-12 p-2">
             <h2>
               Nesting the Grid Classes
             </h2>
@@ -30,20 +30,3 @@
           </div>
         </div>
 </template>
-  
-<script>
-  export default {
-    props:{
-
-    },
-    setup() {
-      return {
-  
-      }
-    }
-  }
-</script>
-
-<style lang="scss" scoped>
-
-</style>

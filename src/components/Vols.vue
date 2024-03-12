@@ -1,6 +1,6 @@
 <template>
     <div class="row mt-2">
-        <div class="col-12">
+        <div class="col-12 p-2">
             <h2>
               Volume
             </h2>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="row mt-2">
-        <div class="col-12">
+        <div class="col-12 p-2">
             <h2>
               How vol-x works
             </h2>
@@ -59,7 +59,7 @@
     </div>
 
     <div class="row mt-2">
-        <div class="col-12">
+        <div class="col-12 p-2">
             <h2>
               Using Vol Dynamically
             </h2>
@@ -71,11 +71,11 @@
 
     <div div class="row mt-2 cols-2 gx-1 full">
         <div class="col vol-4 example flex-col justify-center align-center">Static</div>
+        <div class="col vol-4 vol-xs-1 example flex-col justify-center align-center">xs</div>
         <div class="col vol-4 vol-sm-1 example flex-col justify-center align-center">sm</div>
         <div class="col vol-4 vol-md-1 example flex-col justify-center align-center">md</div>
         <div class="col vol-4 vol-lg-1 example flex-col justify-center align-center">lg</div>
         <div class="col vol-4 vol-xl-1 example flex-col justify-center align-center">xl</div>
-        <div class="col vol-4 vol-xxl-1 example flex-col justify-center align-center">xxl</div>
     </div>
 </template>
   
@@ -112,8 +112,3 @@ import { onMounted, ref } from 'vue'
     }
   }
 </script>
-
-<style lang="scss" scoped>
-@import "../assets/scss/_variables.scss";
-
-</style>

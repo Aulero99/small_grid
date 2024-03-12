@@ -1,9 +1,10 @@
 <template>
   <header></header>
   <main>
-    <Grid/>
-    <Utilities/>
-    <Root/>
+    <!-- <Grid/> -->
+    <!-- <Utilities/> -->
+    <Skeleton/>
+    <!-- <Root/> -->
   </main>
   <footer></footer>
 </template>
@@ -23,8 +24,7 @@ export default {
 
     onBeforeMount(()=>{
       // @ts-ignore
-      options.dev()
-      // breakpointLogic.respondOnline()
+      // options.dev()
     })
     onMounted(()=>{ 
       console.log('onmount')

@@ -8,17 +8,5 @@
     <Vols/>
     <Gutters/>
   </div>
+  <Containers/>
 </template>
-  
-<script>
-import { computed, onMounted, ref } from 'vue'
-  export default {
-    setup() {
-      return {
-      }
-    }
-  }
-</script>
-
-<style lang="scss">
-</style>

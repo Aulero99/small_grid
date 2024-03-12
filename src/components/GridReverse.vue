@@ -1,7 +1,7 @@
 <template>
     <!-- Reversing default example -->
     <div class="row mt-2">
-        <div class="col-12">
+        <div class="col-12 p-2">
             <h2>
                 Reversing Default Behavior
             </h2>
@@ -36,18 +36,3 @@
         </div>
     </div>
 </template>
-  
-<script>
-  export default {
-    setup() {
-      return {
-  
-      }
-    }
-  }
-</script>
-
-<style lang="scss" scoped>
-@import "../assets/scss/_variables.scss";
-
-</style>

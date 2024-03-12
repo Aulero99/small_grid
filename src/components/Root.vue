@@ -1,9 +1,9 @@
 <template>
-<div class="container pb-5">
+<div class="container-solid pb-5">
     <section class="row mt-2">
-        <div class="col-12">
+        <div class="col-12 p-2">
             <h2>
-                _Root
+                Root
             </h2>
         </div>
     </section>
@@ -134,22 +134,22 @@
 <style lang="scss" scoped>
 @import "../assets/scss/main.scss";
 
-.title{
-    border-bottom: 2px solid black;
-}
+// .title{
+//     border-bottom: 2px solid black;
+// }
 
-.colors{
-    .card{
-        height: calc(0.1 * $vh100);
-        aspect-ratio: 1/1;
-        border-radius: 0.15rem;
+// .colors{
+//     .card{
+//         height: calc(0.1 * $vh100);
+//         aspect-ratio: 1/1;
+//         border-radius: 0.15rem;
         
-        &.one{ background-color: $cs1; }
-        &.two{ background-color: $cs2; }
-        &.three{ background-color: $cs3; }
-        &.four{ background-color: $cs4; }
-        &.five{ background-color: $cs5; }
-    }
-}
+//         &.one{ background-color: $cs1; }
+//         &.two{ background-color: $cs2; }
+//         &.three{ background-color: $cs3; }
+//         &.four{ background-color: $cs4; }
+//         &.five{ background-color: $cs5; }
+//     }
+// }
 
 </style>
