@@ -1,10 +1,10 @@
 <template>
   <header></header>
   <main>
-    <!-- <Grid/> -->
-    <!-- <Utilities/> -->
+    <Grid/>
+    <Utilities/>
     <Skeleton/>
-    <!-- <Root/> -->
+    <Root/>
   </main>
   <footer></footer>
 </template>
