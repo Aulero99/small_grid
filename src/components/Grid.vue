@@ -1,12 +1,12 @@
 <template>
-  <div class="container-solid pb-5">
+  <ss-container-solid class="pb-5">
     <Cols/>
     <Breakpoints/>
-    <GridReverse/>
+    <!-- <GridReverse/> -->
     <GridComplex/>
     <GridNesting/>
     <Vols/>
     <Gutters/>
-  </div>
+  </ss-container-solid>
   <Containers/>
 </template>

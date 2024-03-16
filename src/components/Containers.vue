@@ -1,110 +1,108 @@
 <template>
-  <div class="container-solid">
-    <div class="row">
-      <div class="col-12 p-2">
+  <ss-container-solid>
+    <ss-row>
+      <col-12 class="p-2">
         <h2>
           Containers
         </h2>
         <p>
           Suspendors also comes with 3 different container classes: .container, which is 100% width at all breakpoints, .container-solid, which has a max width set for every breakpoint, and .container-shift which shifts from .container-solid to the default .container at the given breakpoint.
         </p>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="col-12 example p-3">
-      .container
-    </div>
-  </div>
-  <div class="container-xxl mt-2">
-    <div class="col-12 example p-3">
-      .container-xxl
-    </div>
-  </div>
-  <div class="container-xl mt-2">
-    <div class="col-12 example p-3">
-      .container-xl
-    </div>
-  </div>
-  <div class="container-lg mt-2">
-    <div class="col-12 example p-3">
-      .container-lg
-    </div>
-  </div>
-  <div class="container-md mt-2">
-    <div class="col-12 example p-3">
-      .container-md
-    </div>
-  </div>
-  <div class="container-sm mt-2">
-    <div class="col-12 example p-3">
-      .container-sm
-    </div>
-  </div>
+      </col-12>
+    </ss-row>
+  </ss-container-solid>
+
+  <ss-container>
+    <col-12 class="example p-3">
+      ss-container
+    </col-12>
+  </ss-container>
+
+  <ss-container xl class="mt-2">
+    <col-12 class="example p-3">
+      ss-container xl
+    </col-12>
+  </ss-container>
+
+  <ss-container lg class="mt-2">
+    <col-12 class="example p-3">
+      ss-container lg
+    </col-12>
+  </ss-container>
+
+  <ss-container md class="mt-2">
+    <col-12 class="example p-3">
+      ss-container md
+    </col-12>
+  </ss-container>
+
+  <ss-container sm class="mt-2">
+    <col-12 class="example p-3">
+      ss-container sm
+    </col-12>
+  </ss-container>
   
   <!-- STUB Solid -->
   
-  <div class="container-solid mt-2">
-    <div class="col-12 example p-3">
-      .container-solid
-    </div>
-  </div>
-  <div class="container-xxl-solid mt-2">
-    <div class="col-12 example p-3">
-      .container-xxl-solid
-    </div>
-  </div>
-  <div class="container-xl-solid mt-2">
-    <div class="col-12 example p-3">
-      .container-xl-solid
-    </div>
-  </div>
-  <div class="container-lg-solid mt-2">
-    <div class="col-12 example p-3">
-      .container-lg-solid
-    </div>
-  </div>
-  <div class="container-md-solid mt-2">
-    <div class="col-12 example p-3">
-      .container-md-solid
-    </div>
-  </div>
-  <div class="container-sm-solid mt-2">
-    <div class="col-12 example p-3">
+  <ss-container-solid class="mt-2">
+    <col-12 class="example p-3">
+      ss-container-solid
+    </col-12>
+  </ss-container-solid>
+
+  <ss-container-solid xl class="mt-2">
+    <col-12 class="example p-3">
+      container-solid xl
+    </col-12>
+  </ss-container-solid>
+
+  <ss-container-solid lg class="mt-2">
+    <col-12 class="col-12 example p-3">
+      container-solid lg
+    </col-12>
+  </ss-container-solid>
+
+  <ss-container-solid md class="mt-2">
+    <col-12 class="example p-3">
+      container-solid md
+    </col-12>
+  </ss-container-solid>
+
+  <ss-container-solid sm class="mt-2">
+    <col-12 class="example p-3">
       .container-sm-solid
-    </div>
-  </div>
+    </col-12>
+  </ss-container-solid>
 
   <!-- STUB Shift -->
 
-  <div class="container-shift mt-2">
-    <div class="col-12 example p-3">
+  <ss-container-shift class="mt-2">
+    <col-12 class="example p-3">
       .container-shift
-    </div>
-  </div>
-  <div class="container-xxl-shift mt-2">
-    <div class="col-12 example p-3">
-      .container-xxl-shift
-    </div>
-  </div>
-  <div class="container-xl-shift mt-2">
-    <div class="col-12 example p-3">
-      .container-xl-shift
-    </div>
-  </div>
-  <div class="container-lg-shift mt-2">
-    <div class="col-12 example p-3">
-      .container-lg-shift
-    </div>
-  </div>
-  <div class="container-md-shift mt-2">
-    <div class="col-12 example p-3">
-      .container-md-shift
-    </div>
-  </div>
-  <div class="container-sm-shift mt-2">
-    <div class="col-12 example p-3">
-      .container-sm-shift
-    </div>
-  </div>
+    </col-12>
+  </ss-container-shift>
+
+  <ss-container-shift xl class="mt-2">
+    <col-12 class="example p-3">
+      container-shift xl
+    </col-12>
+  </ss-container-shift>
+
+  <ss-container-shift lg class="mt-2">
+    <col-12 class="example p-3">
+      container-shift lg
+    </col-12>
+  </ss-container-shift>
+
+  <ss-container-shift md class="mt-2">
+    <col-12 class="example p-3">
+      container-shift md
+    </col-12>
+  </ss-container-shift>
+
+  <ss-container-shift sm class="mt-2">
+    <col-12 class="example p-3">
+      container-shift sm
+    </col-12>
+  </ss-container-shift>
 </template>
