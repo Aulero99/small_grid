@@ -1,7 +1,8 @@
 <template>
-    <div class="container-solid pb-5">
+    <ss-container-solid class="container-solid pb-5">
         <Elevation/>
-    </div>
+        <Skeleton/>
+    </ss-container-solid>
 </template>
   
 <script>

@@ -3,7 +3,6 @@
   <main>
     <Grid/>
     <Utilities/>
-    <Skeleton/>
     <Root/>
   </main>
   <footer></footer>
@@ -24,7 +23,7 @@ export default {
 
     onBeforeMount(()=>{
       // @ts-ignore
-      // options.dev()
+      // options.dev()d ../
     })
     onMounted(()=>{ 
       console.log('onmount')

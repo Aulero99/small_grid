@@ -1,63 +1,65 @@
 <template>
-    <div class="container-solid">
-        <div class="row cols-12 cols-xxs-6 cols-sm-4 cols-md-3 g-2 mt-2" id="skele-test">
-            <div class="col" data-skeleton>
-                <img data-src="https://source.unsplash.com/random" alt="img1" class="img-demo">
-            </div>
-            <div class="col">
-                <div class="fill-x vol-2" data-skeleton>
-                    <img data-src="https://source.unsplash.com/random" alt="img1" class="img-demo">
-                </div>
-                <div class="fill-x p-1">
-                    <div class="row">
-                        <div class="col-3 flex-row justify-center align-center" data-skeleton-circle>
-                            <img data-src="https://source.unsplash.com/random" alt="circle" class="demo-circle-img">
-                        </div>
-                        <div class="col-9 p-1 flex-row justify-center align-center">
-                            <p class="my-0 ms-1">Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col" data-skeleton>
-                <img data-src="https://source.unsplash.com/random" alt="img1" class="img-demo">
-            </div>
-            <div class="col d-sm-none" data-skeleton>
-                <img data-src="https://source.unsplash.com/random" alt="img1" class="img-demo">
-            </div>
-        </div>
-        <div class="row cols-12 cols-xxs-6 cols-sm-4 cols-md-3 g-2 mt-2" id="skele-test2">
-            <div class="col" data-skeleton>
-                <img data-src="https://source.unsplash.com/random" alt="img1" class="img-demo">
-            </div>
-            <div class="col">
-                <div class="fill-x vol-2" data-skeleton>
-                    <img data-src="https://source.unsplash.com/random" alt="img1" class="img-demo">
-                </div>
-                <div class="fill-x p-1">
-                    <div class="row">
-                        <div class="col-3 flex-row justify-center align-center" data-skeleton-circle>
-                            <img data-src="https://source.unsplash.com/random" alt="circle" class="demo-circle-img">
-                        </div>
-                        <div class="col-9 p-1 flex-row justify-center align-center">
-                            <p class="my-0 ms-1 fill-x" id="skele-text-demo" data-skeleton-bars></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col" data-skeleton>
-                <img data-src="https://source.unsplash.com/random" alt="img1" class="img-demo">
-            </div>
-            <div class="col d-sm-none" data-skeleton>
-                <img data-src="https://source.unsplash.com/random" alt="img1" class="img-demo">
-            </div>
-            <div class="col-12">
-                <button @click="fadeIn2()">
+    <container-solid>
+        <ss-row cols-12 cols-md-6 class="mt-2">
+            <col-12>
+                <h2>
+                    Loaders
+                </h2>
+                <p>
+                    Suspendors comes pre-installed with several loader options. 
+                </p>
+            </col-12>
+            <col-12 class="flex-row justify-center py-1 px-3">
+                <button @click="fadeIn2()" class="vol-md-1 fill-x">
                     Load
                 </button>
-            </div>
-        </div>
-    </div>
+            </col-12>
+            <ss-col>
+                <ss-row cols-12 cols-md-6 g-2 class="mt-2" id="skele-test">
+                    <ss-col vol-6 skeleton class="card">
+                        <img data-src="https://source.unsplash.com/random" alt="img1" class="img-demo e-3"/>
+                    </ss-col>
+                    <ss-col>
+                        <div data-skeleton class="card e-3">
+                            <div class="vol-4 fill-x">
+                                <img data-src="https://source.unsplash.com/random" alt="img1" class="img-demo"/>
+                            </div>
+                            <ss-row vol-2 class="justify-center align-center px-2">
+                                <col-3 vol-1 data-skeleton-circle class="p-1 flex-col justify-center">
+                                    <img data-src="https://source.unsplash.com/random" alt="circle" class="demo-circle-img" />
+                                </col-3>
+                                <col-9 class="py-1 pe-1 flex-row justify-center align-center">
+                                    <p class="my-0 ms-2 fill-x">Lorem ipsum dolor sit amet.</p>
+                                </col-9>
+                            </ss-row>
+                        </div>
+                    </ss-col>
+                </ss-row>
+            </ss-col>
+            <ss-col id="skele-test2">
+                <ss-row cols-12 cols-md-6 g-2 class="mt-2" id="skele-test">
+                    <ss-col vol-6 skeleton class="card">
+                        <img data-src="https://source.unsplash.com/random" alt="img1" class="img-demo e-3"/>
+                    </ss-col>
+                    <ss-col>
+                        <div data-skeleton class="card e-3">
+                            <div class="vol-4 fill-x">
+                                <img data-src="https://source.unsplash.com/random" alt="img1" class="img-demo"/>
+                            </div>
+                            <ss-row vol-2 class="justify-center align-center px-2">
+                                <col-3 vol-1 data-skeleton-circle class="p-1 flex-col justify-center">
+                                    <img data-src="https://source.unsplash.com/random" alt="circle" class="demo-circle-img" />
+                                </col-3>
+                                <col-9 class="py-1 pe-1 flex-row justify-center align-center">
+                                    <p id="skele-text-demo" data-skeleton-bars class="my-0 ms-2 fill-x"></p>
+                                </col-9>
+                            </ss-row>
+                        </div>
+                    </ss-col>
+                </ss-row>
+            </ss-col>
+        </ss-row>
+    </container-solid>
 </template>
   
 <script>
@@ -88,8 +90,13 @@ import { onMounted } from 'vue';
     width: 100%;
     height: 100%;
     aspect-ratio: 1/1;
-    border-radius: 5%;
     object-fit: cover;
+    overflow: hidden;
+}
+
+.card{
+    border-radius: 1rem;
+    overflow: hidden;
 }
 
 .demo-circle-img{
