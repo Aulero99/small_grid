@@ -11,7 +11,15 @@ export default defineConfig({
       }
     }
   },
-  plugins: [vue()],
+  plugins: [vue({
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) => {
+          return tag.startsWith('s-')
+        }
+      }
+    }
+  })],
   server:{
     host: false,
     port: 8000,

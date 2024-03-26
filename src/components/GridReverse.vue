@@ -1,38 +1,38 @@
 <template>
     <!-- Reversing default example -->
-    <div class="row mt-2">
-        <div class="col-12 p-2">
+    <s-row class="row mt-2">
+        <s-col-12 class="p-2">
             <h2>
                 Reversing Default Behavior
             </h2>
             <p>
-                By default, columns revert to 100% width above thier breakpoint (.col-12). However, you can get reverse this default behavior by changing the default .col class to another, then specify the size of the grid like below.
+                By default, columns revert to 100% width above their breakpoint (.s-col-12). However, you can get reverse this default behavior by changing the default .col class to another, then specify the size of the grid like below.
             </p>
-        </div>
+        </s-col-12>
 
-        <div class="col-md-12 col-4 example p-3">
+        <s-col-4 md-12 class="example p-3">
             <div class="d-md-none">
-                .col-4
+                .s-col-4
             </div>
             <div class="d-none d-md-block">
-                .col-md-12
+                .s-col-md-12
             </div>
-        </div>
-        <div class="col-md-12 col-4 example p-3">
+        </s-col-4>
+        <s-col-4 md-12 class="example p-3">
             <div class="d-md-none">
-                .col-4
+                .s-col-4
             </div>
             <div class="d-none d-md-block">
-                .col-md-12
+                .s-col-md-12
             </div>
-        </div>
-        <div class="col-md-12 col-4 example p-3">
+        </s-col-4>
+        <s-col-4 md-12 class="example p-3">
             <div class="d-md-none">
-                .col-4
+                .s-col-4
             </div>
             <div class="d-none d-md-block">
-                .col-md-12
+                .s-col-md-12
             </div>
-        </div>
-    </div>
+        </s-col-4>
+    </s-row>
 </template>

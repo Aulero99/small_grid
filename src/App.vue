@@ -4,6 +4,7 @@
     <Grid/>
     <Utilities/>
     <Root/>
+    <Masonry/>
   </main>
   <footer></footer>
 </template>

@@ -1,80 +1,84 @@
 <template>
-    <container-solid>
-        <ss-row cols-12 cols-md-6 class="mt-2">
-            <col-12>
+    <s-container-solid>
+        <s-row cols-12 cols-md-6 class="mt-2">
+            <s-col-12 class="p-2">
                 <h2>
                     Loaders
                 </h2>
                 <p>
                     Suspendors comes pre-installed with several loader options. 
                 </p>
-            </col-12>
-            <col-12 class="flex-row justify-center py-1 px-3">
-                <button @click="fadeIn2()" class="vol-md-1 fill-x">
+            </s-col-12>
+            <s-col-12 class="flex-row justify-center py-1 px-3">
+                <button @click="fadeIn2()" class="vol-1 fill-x">
                     Load
                 </button>
-            </col-12>
-            <ss-col>
-                <ss-row cols-12 cols-md-6 g-2 class="mt-2" id="skele-test">
-                    <ss-col vol-6 skeleton class="card">
+            </s-col-12>
+            <s-col class="pb-3 d-none d-md-block">
+                <s-row cols-12 cols-md-6 g-2 class="mt-2" id="skele-test">
+                    <s-col vol-6 skeleton class="card e-3">
                         <img data-src="https://source.unsplash.com/random" alt="img1" class="img-demo e-3"/>
-                    </ss-col>
-                    <ss-col>
+                    </s-col>
+                    <s-col>
                         <div data-skeleton class="card e-3">
                             <div class="vol-4 fill-x">
                                 <img data-src="https://source.unsplash.com/random" alt="img1" class="img-demo"/>
                             </div>
-                            <ss-row vol-2 class="justify-center align-center px-2">
-                                <col-3 vol-1 data-skeleton-circle class="p-1 flex-col justify-center">
-                                    <img data-src="https://source.unsplash.com/random" alt="circle" class="demo-circle-img" />
-                                </col-3>
-                                <col-9 class="py-1 pe-1 flex-row justify-center align-center">
+                            <s-row vol-2 class="justify-center align-center px-1">
+                                <s-col-3 skeleton-circle class="fill-y py-1 flex-row align-center justify-center">
+                                    <div class="demo-circle-img">
+                                        <img data-src="https://source.unsplash.com/random" alt="circle"/>
+                                    </div>
+                                </s-col-3>
+                                <s-col-9 class="py-1 pe-1 flex-row justify-center align-center">
                                     <p class="my-0 ms-2 fill-x">Lorem ipsum dolor sit amet.</p>
-                                </col-9>
-                            </ss-row>
+                                </s-col-9>
+                            </s-row>
                         </div>
-                    </ss-col>
-                </ss-row>
-            </ss-col>
-            <ss-col id="skele-test2">
-                <ss-row cols-12 cols-md-6 g-2 class="mt-2" id="skele-test">
-                    <ss-col vol-6 skeleton class="card">
+                    </s-col>
+                </s-row>
+            </s-col>
+            <s-col class="pb-3 d-flex">
+                <s-row cols-12 cols-md-6 g-2 class="mt-2" id="skele-test2">
+                    <s-col vol-6 skeleton class="card e-3">
                         <img data-src="https://source.unsplash.com/random" alt="img1" class="img-demo e-3"/>
-                    </ss-col>
-                    <ss-col>
+                    </s-col>
+                    <s-col class="o-first o-md-last">
                         <div data-skeleton class="card e-3">
                             <div class="vol-4 fill-x">
                                 <img data-src="https://source.unsplash.com/random" alt="img1" class="img-demo"/>
                             </div>
-                            <ss-row vol-2 class="justify-center align-center px-2">
-                                <col-3 vol-1 data-skeleton-circle class="p-1 flex-col justify-center">
-                                    <img data-src="https://source.unsplash.com/random" alt="circle" class="demo-circle-img" />
-                                </col-3>
-                                <col-9 class="py-1 pe-1 flex-row justify-center align-center">
+                            <s-row vol-2 class="justify-center align-center px-1">
+                                <s-col-3 skeleton-circle class="fill-y py-1 flex-row align-center justify-center">
+                                    <div class="demo-circle-img">
+                                        <img data-src="https://source.unsplash.com/random" alt="circle" />
+                                    </div>
+                                </s-col-3>
+                                <s-col-9 class="py-1 pe-1 flex-row justify-center align-center">
                                     <p id="skele-text-demo" data-skeleton-bars class="my-0 ms-2 fill-x"></p>
-                                </col-9>
-                            </ss-row>
+                                </s-col-9>
+                            </s-row>
                         </div>
-                    </ss-col>
-                </ss-row>
-            </ss-col>
-        </ss-row>
-    </container-solid>
+                    </s-col>
+                </s-row>
+            </s-col>
+        </s-row>
+    </s-container-solid>
 </template>
   
 <script>
-import { imgFade } from 'suspendors';
+import { loaders } from 'suspendors';
 import { onMounted } from 'vue';
 
   export default {
     setup() {
         function fadeIn2(){
-            imgFade.fadeAllInId('skele-test2')
+            loaders.loadAllImgInId('skele-test2')
             const txt = document.getElementById('skele-text-demo')
             txt.innerHTML = 'Lorem ipsum dolor sit amet.'
         }
         onMounted(()=>{
-            imgFade.fadeAllInId('skele-test')
+            loaders.loadAllImgInId('skele-test')
         })
       return {
         fadeIn2
@@ -101,10 +105,16 @@ import { onMounted } from 'vue';
 
 .demo-circle-img{
     border: 0;
-    border-radius: 100%;
-    object-fit: cover;
-    width: 100%;
-    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: max(100vh, 100vw);
+    max-height: 100%;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
 }
 
 .blackWhite{

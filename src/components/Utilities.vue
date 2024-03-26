@@ -1,8 +1,8 @@
 <template>
-    <ss-container-solid class="container-solid pb-5">
+    <s-container-solid class="pb-5">
         <Elevation/>
         <Skeleton/>
-    </ss-container-solid>
+    </s-container-solid>
 </template>
   
 <script>

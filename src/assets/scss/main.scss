@@ -3,8 +3,8 @@
 @import "suspendors";
 @import "./_themes.scss";
 
-$bg: lighten(map.get($theme, "ash"), 17%);
-$border: darken($bg, 20%);
+$bg: lighten(map.get($theme, "tangerine"), 17%);
+$border: darken($bg, 10%);
 $txt: darken($bg, 95%);
 
 
@@ -17,6 +17,6 @@ $txt: darken($bg, 95%);
 
 .example-2{
   background-color: darken($bg, 10%);
-  border: solid 1px $border;
+  border: solid 1px darken($border, 10%);
   color: $txt;
 }
