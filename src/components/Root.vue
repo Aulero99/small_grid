@@ -1,5 +1,4 @@
 <template>
-<s-container-solid class="pb-5">
     <s-row class="mt-2">
         <s-col-12 class="p-2">
                 <h2>
@@ -68,7 +67,6 @@
             </ol>
         </s-col-12>
     </s-row>
-</s-container-solid>
 </template>
   
 <script>

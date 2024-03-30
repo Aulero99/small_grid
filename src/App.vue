@@ -3,7 +3,6 @@
   <main>
     <Grid/>
     <Utilities/>
-    <Root/>
     <Masonry/>
   </main>
   <footer></footer>

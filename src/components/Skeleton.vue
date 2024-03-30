@@ -25,8 +25,8 @@
                                 <img data-src="https://source.unsplash.com/random" alt="img1" class="img-demo"/>
                             </div>
                             <s-row vol-2 class="justify-center align-center px-1">
-                                <s-col-3 skeleton-circle class="fill-y py-1 flex-row align-center justify-center">
-                                    <div class="demo-circle-img">
+                                <s-col-3 class="fill-y py-1 flex-row align-center justify-center">
+                                    <div data-skeleton-circle class="demo-circle-img">
                                         <img data-src="https://source.unsplash.com/random" alt="circle"/>
                                     </div>
                                 </s-col-3>
@@ -49,8 +49,8 @@
                                 <img data-src="https://source.unsplash.com/random" alt="img1" class="img-demo"/>
                             </div>
                             <s-row vol-2 class="justify-center align-center px-1">
-                                <s-col-3 skeleton-circle class="fill-y py-1 flex-row align-center justify-center">
-                                    <div class="demo-circle-img">
+                                <s-col-3 class="fill-y py-1 flex-row align-center justify-center">
+                                    <div data-skeleton-circle class="demo-circle-img">
                                         <img data-src="https://source.unsplash.com/random" alt="circle" />
                                     </div>
                                 </s-col-3>
@@ -106,13 +106,19 @@ import { onMounted } from 'vue';
 .demo-circle-img{
     border: 0;
     overflow: hidden;
-    border-radius: max(100vh, 100vw);
+    border-radius: 50%;
+    // width: 100vw;
+    // height: 100vh;
     max-height: 100%;
     max-width: 100%;
     aspect-ratio: 1 / 1;
+    &:has(img[data-src]){
+        height: 100vh;
+    }
     img{
         height: 100%;
         width: 100%;
+        aspect-ratio: 1 / 1;
         object-fit: cover;
     }
 }
