@@ -1,6 +1,7 @@
 <template>
   <header></header>
   <main>
+    <Modals/>
     <Grid/>
     <Utilities/>
     <Masonry/>
