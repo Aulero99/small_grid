@@ -14,18 +14,12 @@ import { computed, onBeforeMount, onMounted } from 'vue';
 // @ts-ignore
 import { AppState } from './AppState';
 // @ts-ignore
-import { breakpointLogic } from './services/BreakpointLogic.js';
-import { options, suspendors } from 'suspendors';
+import { suspendors } from 'suspendors';
 
 export default {
 
 
   setup(){
-
-    onBeforeMount(()=>{
-      // @ts-ignore
-      // options.dev()d ../
-    })
     onMounted(()=>{ 
       console.log('onmount')
     })
@@ -35,5 +29,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./assets/scss/main.scss";
+@use './assets/scss/main'
 </style>
